@@ -1,1 +1,3 @@
-alert("hey");
+$("#bttn").click(function() {
+    alert("hey");
+});
