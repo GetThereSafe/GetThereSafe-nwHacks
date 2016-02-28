@@ -1,3 +1,11 @@
+*{
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 /* Header */
 header{
   position: fixed;
@@ -13,13 +21,18 @@ header{
   z-index: 999;
   position: fixed;
 }
-header h4{
+header h4,
+header span{
   font-family: 'Questrial', sans-serif;
-  font-size: 35px;
+  font-size: 2em;
   text-align: center;
+  letter-spacing: 1px;
+  padding: 0 10px;
+}
+header span{
+  font-weight: 300;
   color: #46C7C7
 }
-
 /*Google Map */
 #map{
   float: left;
