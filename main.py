@@ -25,8 +25,8 @@ def get_routes():
     app.logger.warning('%s AND %s' % (start, end))
 
     routes = gmaps.directions(start, end, alternatives=True)
-    best_route = _get_best_route(routes)
-    return json.dumps(best_route)
+    sorted_routes = _get_best_route(routes)
+    return json.dumps(sorted_routes)
 
 
 def _get_best_route(routes):
@@ -53,17 +53,13 @@ def _get_best_route(routes):
             if _has_nearby_lightsource(coord, light_source_coords):
                 light_sources += 1
 
-        route_rank.append([route, light_sources, decoded_light_coords])
+        route_rank.append([light_sources, route, decoded_light_coords])
     app.logger.warning([route[1] for route in route_rank])
-    # Get and return the best route based on total number of lightsources
-    best_route = route_rank[0]
-    # Make sure there's at least 2 possible routes
-    if len(route_rank) > 1:
-        # Start at second element since we set the best_route to the first for a base
-        for possible_route in route_rank[1:]:
-            if possible_route[1] > best_route[1]:
-                best_route = possible_route
-    return best_route[2]
+
+    # Sort the best routes
+    route_rank.sort(key=lambda route: route[0])
+
+    return route_rank
 
 
 def _get_coords_from_polyline(polyline):
@@ -71,9 +67,9 @@ def _get_coords_from_polyline(polyline):
 
 
 def _has_nearby_lightsource(coord, light_source_coords):
-    # Check if any lightsource in the light_source_coords is within nine meters of the route coordinate
+    # Check if any lightsource in the light_source_coords is within six meters of the route coordinate
     for light_coord in light_source_coords:
-        if _get_distance_between_points(coord, light_coord) <= 9:
+        if _get_distance_between_points(coord, light_coord) <= 6:
             return True
     return False
 

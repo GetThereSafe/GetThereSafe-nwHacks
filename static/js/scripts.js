@@ -1,5 +1,5 @@
 var map;
-var polyline;
+var polylines;
 
 function initMap() {
     console.log('init called');
@@ -10,24 +10,32 @@ function initMap() {
     });
 }
 
-function mapRoute(route) {
+function mapRoute(routes) {
     console.log('mapRoute called');
-    console.log(route);
+    console.log(routes);
 
-    latlngPoints = [];
-    for(var i = 0; i < route.length; i++) {
-        latlngPoints.push({lat: route[i][0], lng: route[i][1]});
+    for(var j = 0; j < routes.lenth; j++){
+        latlngPoints = [];
+        for(var i = 0; i < routes[j].length; i++) {
+            latlngPoints.push({lat: routes[j][i][0], lng: routes[j][i][1]});
+        }
+        console.log(latlngPoints);
+        var strokeColor = '#FF0000'
+        if(j >= 1){
+            strokeColor = '#0000FF'
+        }
+
+        var polyline = new google.maps.Polyline({
+            path: latlngPoints,
+            geodesic: true,
+            strokeColor: '#FF0000',
+            strokeOpacity: 0.5,
+            strokeWeight: 2
+        });
+
+        polyline.setMap(map);
+        polylines.push(polyline)
     }
-    console.log(latlngPoints);
-    polyline = new google.maps.Polyline({
-        path: latlngPoints,
-        geodesic: true,
-        strokeColor: '#FF0000',
-        strokeOpacity: 0.5,
-        strokeWeight: 2
-    });
-
-    polyline.setMap(map);
 }
 
 function getRoutes(starting_point, ending_point) {
@@ -37,9 +45,9 @@ function getRoutes(starting_point, ending_point) {
       type: 'POST',
       data: { start: starting_point, end:ending_point},
       success: function(data) {
-          route = JSON.parse(data);
-          console.log(route);
-          mapRoute(route);
+          routes = JSON.parse(data);
+          console.log(routes);
+          mapRoute(routes);
       }
     });
 }
