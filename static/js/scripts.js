@@ -1,4 +1,5 @@
 var map;
+var polyline;
 
 function initMap() {
     console.log('init called');
@@ -18,11 +19,11 @@ function mapRoute(route) {
         latlngPoints.push({lat: route[i][0], lng: route[i][1]});
     }
     console.log(latlngPoints);
-    var polyline = new google.maps.Polyline({
+    polyline = new google.maps.Polyline({
         path: latlngPoints,
         geodesic: true,
         strokeColor: '#FF0000',
-        strokeOpacity: 1.0,
+        strokeOpacity: 0.5,
         strokeWeight: 2
     });
 
@@ -46,5 +47,10 @@ function getRoutes(starting_point, ending_point) {
 $("#bttn").click(function() {
     starting_point = $("#starting_point").val();
     ending_point = $("#ending_point").val();
+    // Remove current path
+    if(polyline) {
+        polyline.setMap(null);
+    }
+
     routes = getRoutes(starting_point, ending_point);
 });
