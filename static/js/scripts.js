@@ -42,6 +42,7 @@ function mapRoute(routes) {
 
 function getRoutes(starting_point, ending_point) {
     console.log(starting_point);
+    $("#spinner").show();
     $.ajax({
       url: '/route',
       type: 'POST',
@@ -51,6 +52,8 @@ function getRoutes(starting_point, ending_point) {
           console.log(routes);
           mapRoute(routes);
       }
+    }).done(function() {
+        $("#spinner").hide();
     });
 }
 

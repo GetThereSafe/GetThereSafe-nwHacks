@@ -56,16 +56,6 @@
     url_for('static', filename='js/scripts.js') }}"></script>
     <script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
     async defer></script>
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $("#spinner").bind("ajaxSend", function() {
-                $(this).show();
-            }).bind("ajaxStop", function() {
-                $(this).hide();
-            }).bind("ajaxError", function() {
-                $(this).hide();
-            });
-        });
-    </script>
+
 </body>
 </html>
