@@ -91,6 +91,16 @@ header span{
   padding-bottom: 4%;
 }
 
+#error p{
+    background-color: #ff0000;
+}
+
+#info-text {
+    text-align: center;
+    vertical-align: middle;
+    line-height: 90px;
+}
+
 /* Text Field Styling */
 .textbox{
   font-size: 10px;
@@ -104,6 +114,21 @@ header span{
   height:25px;
   width: 175px;
 }
+
+/* Loading Icon */
+.spinner{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left: -50px; /* half width of the spinner gif */
+    margin-top: -50px; /* half height of the spinner gif */
+    text-align:center;
+    z-index:1234;
+    overflow: auto;
+    width: 50; /* width of the spinner gif */
+    height: 52px; /*hight of the spinner gif +2px to fix IE8 issue */
+}
+
 .button{
   align-items: center;
   padding: 5px;
@@ -489,21 +514,4 @@ html, body { height: 100%; width: 100%; font-family: Helvetica, Arial, sans-seri
     padding: 10px;
   }
 
-  /* Loading Icon */
-  .spinner{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    margin-left: -50px; /* half width of the spinner gif */
-    margin-top: -50px; /* half height of the spinner gif */
-    text-align:center;
-    z-index:1234;
-    overflow: auto;
-    width: 50; /* width of the spinner gif */
-    height: 52px; /*hight of the spinner gif +2px to fix IE8 issue */
-  }
-
-  #error p{
-    background-color: #ff0000;
-  }
 }
