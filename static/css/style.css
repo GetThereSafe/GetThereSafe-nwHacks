@@ -34,13 +34,12 @@ header{
   font-size: 1em;
   text-align: center;
   letter-spacing: 1px;
-  padding-top: 90%;
+  padding: 10px;
 }
 header span{
   font-weight: 300;
   color: #46C7C7
 }
-/* Header Image */
 
 /*Google Map */
 .divmap{
