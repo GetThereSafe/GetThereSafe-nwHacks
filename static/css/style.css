@@ -1,3 +1,4 @@
+/* Global */
 *{
   margin: 0;
   padding: 0;
@@ -39,6 +40,7 @@ header span{
   font-weight: 300;
   color: #46C7C7
 }
+
 /*Google Map */
 #map{
   float: left;
@@ -48,6 +50,7 @@ header span{
   height: 800px;
   background-color: #CCC;
 }
+
 /* Text Field */
 #text-wrap{
   float: right;
@@ -87,6 +90,7 @@ header span{
   background-image: linear-gradient(135deg, rgb(254,255,255) 0%,rgb(221,241,249) 35%,rgb(160,216,239) 100%);
   background-size: 200%;
 }
+/* Body Format */
 body {
     /* Without this, the body has excess horizontal scroll when the menu is open */
   overflow-x: hidden;
@@ -171,4 +175,29 @@ html, body { height: 100%; width: 100%; font-family: Helvetica, Arial, sans-seri
     font-family: 'Questrial', sans-serif;
     font-size: 5px;
   }
+}
+
+/* Text Field Styling */
+.textbox{
+  padding: 5px;
+  background: white;
+  border: 1px double #DDD;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #333;
+  color: #666;
+  outline: none;
+  height:25px;
+  width: 175px;
+}
+.button{
+  align-items: center;
+  padding: 5px;
+  background: white;
+  border: 1px double #DDD;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #333;
+  color: #666;
+  outline: none;
+  height:25px;
+  width: 75px;
 }
