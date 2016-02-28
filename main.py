@@ -1,6 +1,7 @@
 import googlemaps
 import os
 import json
+from model import Coord
 from flask import Flask, render_template, request
 from flask.ext.sqlalchemy import SQLAlchemy
 from math import sin, cos, sqrt, atan2, radians
@@ -31,7 +32,10 @@ def get_routes():
 
 def _get_best_route(routes):
     # GET THE COORDS FROM DATABASE
-    light_source_coords = [(0, 0)]
+    all_coordinates = Coord.query.all()
+    light_source_coords = []
+    for coord in all_coordinates:
+        light_source_coords.append([coord.lat, coord.lng])
 
     route_rank = []
     for route in routes:
@@ -72,22 +76,6 @@ def _has_nearby_lightsource(coord, light_source_coords):
         if _get_distance_between_points(coord, light_coord) <= 5:
             return True
     return False
-
-
-
-def _upload_csv():
-    import csv
-    from model import Coord
-    with open("CityLight.csv", "rb") as f:
-        reader = csv.reader(f, delimiter="\t")
-        for i, line in enumerate(reader):
-            lng, lat = line[0].split(',')
-            coord = Coord(lng, lat)
-            db.session.add(coord)
-        db.session.commit()
-
-
-
 
 
 def _get_distance_between_points(coord_tuple_a, coord_tuple_b):
