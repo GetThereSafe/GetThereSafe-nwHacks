@@ -54,7 +54,7 @@ def _get_best_route(routes):
                 light_sources += 1
 
         route_rank.append([route, light_sources, decoded_light_coords])
-
+    app.logger.warning(route_rank)
     # Get and return the best route based on total number of lightsources
     best_route = route_rank[0]
     # Make sure there's at least 2 possible routes
