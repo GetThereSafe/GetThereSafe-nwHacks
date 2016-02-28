@@ -30,8 +30,12 @@ def get_routes():
 
 
 def _get_best_route(routes):
+    from model import Coord
     # GET THE COORDS FROM DATABASE
-    light_source_coords = [(0, 0)]
+    all_coordinates = Coord.query.all()
+    light_source_coords = []
+    for coord in all_coordinates:
+        light_source_coords.append([coord.lat, coord.lng])
 
     route_rank = []
     for route in routes:
@@ -50,7 +54,7 @@ def _get_best_route(routes):
                 light_sources += 1
 
         route_rank.append([route, light_sources, decoded_light_coords])
-
+    app.logger.warning(route_rank)
     # Get and return the best route based on total number of lightsources
     best_route = route_rank[0]
     # Make sure there's at least 2 possible routes
