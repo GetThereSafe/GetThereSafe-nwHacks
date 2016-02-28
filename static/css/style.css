@@ -28,6 +28,13 @@ header{
   letter-spacing: 1px;
   padding: 10 10px;
 }
+#shadow h3{
+  font-family: 'Questrial', sans-serif;
+  font-size: 1em;
+  text-align: center;
+  letter-spacing: 1px;
+  padding: 10 10px;
+}
 header span{
   font-weight: 300;
   color: #46C7C7
