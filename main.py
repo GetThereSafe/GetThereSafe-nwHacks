@@ -14,6 +14,7 @@ db = SQLAlchemy(app)
 
 @app.route('/')
 def index():
+    db.create_all()
     return render_template('index.html')
 
 
