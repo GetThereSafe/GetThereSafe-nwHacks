@@ -8,6 +8,11 @@ function initMap() {
       center: {lat: 48.428611, lng: -123.365556},
       zoom: 14
     });
+
+    map.addListener('dbclick', function(event) {
+        console.log(event);
+    });
+
 }
 
 function mapRoute(routes) {
