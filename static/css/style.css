@@ -30,9 +30,10 @@ header{
   padding: 10px;
 }
 #shadow h3{
+  float: left;
   font-family: 'Questrial', sans-serif;
   font-size: 1em;
-  text-align: center;
+  text-align: left;
   letter-spacing: 1px;
   padding: 10px;
 }
