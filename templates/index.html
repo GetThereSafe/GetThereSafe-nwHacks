@@ -35,6 +35,9 @@
             <input class="textbox" type="text" id="ending_point" placeholder="Destination"> <br> <br>
           </form>
           <button class="button" id="bttn" style="cursor: pointer;">Search</button>
+          <div id="spinner" class="spinner" style="display:none;">
+            <img id="img-spinner" src="{{ url_for('static',filename='spinner.gif') }}" alt="Loading"/>
+          </div>
         </div>
       </div>
 
@@ -46,6 +49,17 @@
       <!-- </div> -->
 
     </div>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#spinner").bind("ajaxSend", function() {
+                $(this).show();
+            }).bind("ajaxStop", function() {
+                $(this).hide();
+            }).bind("ajaxError", function() {
+                $(this).hide();
+            });
+        });
+    </script>
 
     <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?libraries=geometry"></script>
