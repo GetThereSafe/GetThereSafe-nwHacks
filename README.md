@@ -4,7 +4,7 @@
 
 --------
 
-[Website](http://8tracks.com/duncanrule/hauntingly-beautiful)
+[Website](http://gettheresafe.herokuapp.com/)
 
 "This is amazing.... I got home semi-safe."
 > Dominique
