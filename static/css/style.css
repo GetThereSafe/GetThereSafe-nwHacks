@@ -52,6 +52,8 @@ header span{
 #text-wrap{
   float: left;
   background-color: #FFFFFF;
+  width: 100px;
+  height: 100px;
 }
 #text-wrap h1{
   font-family: 'Questrial', sans-serif;
