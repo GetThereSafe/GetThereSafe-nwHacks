@@ -16,8 +16,8 @@ function mapRoute(routes) {
 
     for(var j = 0; j < routes.length; j++){
         latlngPoints = [];
-        for(var i = 0; i < routes[j].length; i++) {
-            latlngPoints.push({lat: routes[j][i][0], lng: routes[j][i][1]});
+        for(var i = 0; i < routes[j][2].length; i++) {
+            latlngPoints.push({lat: routes[j][2][i][0], lng: routes[j][2][i][1]});
         }
         console.log(latlngPoints);
         var strokeColor = '#FF0000'

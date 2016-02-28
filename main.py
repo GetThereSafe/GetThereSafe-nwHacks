@@ -43,18 +43,17 @@ def _get_best_route(routes):
 
         app.logger.warning(polyline)
 
-        decoded_light_coords = _get_coords_from_polyline(polyline)
+        decoded_route_coords = _get_coords_from_polyline(polyline)
 
-        app.logger.warning(decoded_light_coords)
+        app.logger.warning(decoded_route_coords)
 
         # Calculate number of lightsources on the route
         light_sources = 0
-        for coord in decoded_light_coords:
+        for coord in decoded_route_coords:
             if _has_nearby_lightsource(coord, light_source_coords):
                 light_sources += 1
 
-        route_rank.append([light_sources, route, decoded_light_coords])
-    app.logger.warning([route[1] for route in route_rank])
+        route_rank.append([light_sources, route, decoded_route_coords])
 
     # Sort the best routes
     route_rank.sort(key=lambda route: route[0])
