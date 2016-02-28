@@ -76,6 +76,7 @@ function getRoutes(starting_point, ending_point) {
           $("#error").show();
       }
   }).always(function() {
+        $("#mapLoc").text("");
         $("#spinner").hide();
     });
 }
