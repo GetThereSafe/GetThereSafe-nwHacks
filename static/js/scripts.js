@@ -39,7 +39,7 @@ function mapRoute(routes) {
         polylines.push(polyline);
     }
 
-    $("#info p").text = "Best route found with " + routes[0][2] +" street lights";
+    $("#info-text").text("Best route found with " + routes[0][0] + " street lights");
     $("#info").show();
 }
 
