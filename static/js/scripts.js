@@ -10,7 +10,11 @@ function initMap() {
     });
 
     google.maps.event.addListener(map, 'click', function(event) {
-        console.log(event.latLng.lat());
+        var geocoder = new google.maps.Geocoder();
+        latlng = event.latlng;
+        geocoder.geocode({'location': latlng}, function(event, result){
+            console.log(event);
+        });
     });
 
 }
