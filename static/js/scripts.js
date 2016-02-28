@@ -14,6 +14,7 @@ function initMap() {
         latlng = event.latlng;
         geocoder.geocode({'location': latlng}, function(event, result){
             console.log(event);
+            console.log(result);
         });
     });
 
