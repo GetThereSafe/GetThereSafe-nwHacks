@@ -42,6 +42,9 @@ header span{
 }
 
 /*Google Map */
+.divmap{
+  padding-top: 100px;
+}
 #map{
   float: right;
   width: 50%;
