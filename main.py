@@ -1,7 +1,6 @@
 import googlemaps
 import os
 import json
-from model import Coord
 from flask import Flask, render_template, request
 from flask.ext.sqlalchemy import SQLAlchemy
 from math import sin, cos, sqrt, atan2, radians
@@ -31,6 +30,7 @@ def get_routes():
 
 
 def _get_best_route(routes):
+    from model import Coord
     # GET THE COORDS FROM DATABASE
     all_coordinates = Coord.query.all()
     light_source_coords = []
