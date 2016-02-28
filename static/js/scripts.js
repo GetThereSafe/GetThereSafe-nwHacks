@@ -14,7 +14,7 @@ function mapRoute(routes) {
     console.log('mapRoute called');
     console.log(routes);
 
-    for(var j = 0; j < routes.lenth; j++){
+    for(var j = 0; j < routes.length; j++){
         latlngPoints = [];
         for(var i = 0; i < routes[j].length; i++) {
             latlngPoints.push({lat: routes[j][i][0], lng: routes[j][i][1]});
