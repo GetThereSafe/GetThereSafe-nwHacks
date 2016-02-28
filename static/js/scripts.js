@@ -7,11 +7,14 @@ function initMap() {
 }
 
 function getRoutes(starting_point, ending_point) {
-    $.post( "/route", {
-        start: starting_point,
-        end: ending_point
-    }, function(data) {
-        alert(data);
+    console.log(starting_point);
+    $.ajax({
+      url: '/route',
+      type: 'POST',
+      data: { start: starting_point, end:ending_point},
+      success: function(data) {
+          alert(data);
+      }
     });
 }
 
