@@ -11,7 +11,8 @@ function initMap() {
 
     google.maps.event.addListener(map, 'click', function(event) {
         var geocoder = new google.maps.Geocoder();
-        latlng = event.latlng;
+        latlngobj = event.latlng;
+        var latlng = {lat: parseFloat(latlngobj.lat()), lng: parseFloat(latlngobj.lng())};
         geocoder.geocode({'location': latlng}, function(event, result){
             console.log(event);
             console.log(result);
