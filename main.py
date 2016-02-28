@@ -77,10 +77,14 @@ def _has_nearby_lightsource(coord, light_source_coords):
 
 def _upload_csv():
     import csv
+    from model import Coord
     with open("CityLight.csv", "rb") as f:
         reader = csv.reader(f, delimiter="\t")
         for i, line in enumerate(reader):
-            print line[0].split(',')
+            lng, lat = line[0].split(',')
+            coord = Coord(lng, lat)
+            db.session.add(coord)
+        db.session.commit()
 
 
 
