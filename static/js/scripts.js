@@ -14,7 +14,7 @@ function mapRoute(routes) {
     console.log('mapRoute called');
     console.log(routes);
 
-    for(var j = 0; j < routes.lenth; j++){
+    for(var j = 0; j < routes.length; j++){
         latlngPoints = [];
         for(var i = 0; i < routes[j].length; i++) {
             latlngPoints.push({lat: routes[j][i][0], lng: routes[j][i][1]});
@@ -56,8 +56,10 @@ $("#bttn").click(function() {
     starting_point = $("#starting_point").val();
     ending_point = $("#ending_point").val();
     // Remove current path
-    if(polyline) {
-        polyline.setMap(null);
+    if(!!polylines) {
+        for(var i = 0; i < polylines.length; i++) {
+            polylines[i].setMap(null);
+        }
     }
 
     routes = getRoutes(starting_point, ending_point);
