@@ -1,5 +1,5 @@
 var map;
-var polylines;
+var polylines = [];
 
 function initMap() {
     console.log('init called');
