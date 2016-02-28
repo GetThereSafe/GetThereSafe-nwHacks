@@ -38,11 +38,15 @@ function mapRoute(routes) {
         polyline.setMap(map);
         polylines.push(polyline);
     }
+
+    $("#info p").text = "Best route found with " + routes[0][2] +" street lights";
+    $("#info").show();
 }
 
 function getRoutes(starting_point, ending_point) {
     console.log(starting_point);
     $("#error").hide();
+    $("#info").hide();
     $("#spinner").show();
     $.ajax({
       url: '/route',
