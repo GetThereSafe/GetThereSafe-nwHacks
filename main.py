@@ -80,7 +80,7 @@ def _upload_csv():
     with open("CityLight.csv", "rb") as f:
         reader = csv.reader(f, delimiter="\t")
         for i, line in enumerate(reader):
-            print line.split(',')
+            print "%s %s" % (line[0], line[1])
 
 
 
