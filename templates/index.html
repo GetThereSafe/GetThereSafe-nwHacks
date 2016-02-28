@@ -27,8 +27,8 @@
 
       <div>
         <div class="divmap" id="text-wrap">
-          <h2>Input your current location and find the safest route home :D </h2>
-          <p>"Get There Safe"  <br>
+          <h2>Find the route with the most lighting at night!</h2>
+          <p>
             Please type in your location and your desired destination.<br> <br>
           </p>
           <form>
@@ -36,6 +36,8 @@
             <input class="textbox" type="text" id="ending_point" placeholder="Destination - 1180 Fort st victoria"> <br> <br>
             <!-- TODO: Clear text field -->
           </form>
+          <p style="margin:5px;">Click on the map to show location</p>
+          <p id="mapLoc" style="font-weight: bold;"></p>
           <button class="button" id="bttn" style="cursor: pointer;">Search</button>
           <div id="spinner" class="spinner" style="display:none;">
             <img id="img-spinner" src="{{ url_for('static',filename='spinner.gif') }}" alt="Loading"/>
@@ -43,7 +45,7 @@
           <div id="error" style="display:none;">
               <p>Could not load route</p>
           </div>
-          <div id="info" style="display:none;">
+          <div id="info" style="display:none;background-color: #00CCFF;">
               <p id="info-text"></p>
           </div>
         </div>

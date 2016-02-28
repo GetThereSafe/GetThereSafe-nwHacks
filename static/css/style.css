@@ -64,6 +64,13 @@ header span{
 .textarea{
   top: 100px;
 }
+
+#info-text {
+    padding-top: 7px;
+    text-align: center;
+    vertical-align: middle;
+}
+
 #text-wrap{
   position: relative;
   text-align: center;

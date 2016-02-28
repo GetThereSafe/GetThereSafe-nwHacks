@@ -9,8 +9,18 @@ function initMap() {
       zoom: 14
     });
 
-    map.addListener('dbclick', function(event) {
+    google.maps.event.addListener(map, 'click', function(event) {
+        var geocoder = new google.maps.Geocoder();
         console.log(event);
+        latlngobj = event.latLng;
+        var latlng = {lat: parseFloat(latlngobj.lat()), lng: parseFloat(latlngobj.lng())};
+        geocoder.geocode({'location': latlng}, function(event, result){
+            if(!!event){
+                var address = event[0].formatted_address;
+                console.log(address);
+                $("#mapLoc").text(address);
+            }
+        });
     });
 
 }
@@ -66,6 +76,7 @@ function getRoutes(starting_point, ending_point) {
           $("#error").show();
       }
   }).always(function() {
+        $("#mapLoc").text("");
         $("#spinner").hide();
     });
 }
