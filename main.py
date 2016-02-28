@@ -13,8 +13,7 @@ def index():
 
 @app.route('/route', methods=['POST'])
 def get_routes():
-    reverse_geocode_result = gmaps.reverse_geocode((40.714224, -73.961452))
-    return reverse_geocode_result
+    return gmaps.geocode('1600 Amphitheatre Parkway, Mountain View, CA')
 
 
 if __name__ == '__main__':
