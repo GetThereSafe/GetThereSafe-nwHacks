@@ -20,21 +20,6 @@ function initMap() {
             }
         });
     });
-
-
-    var defaultBounds = new google.maps.LatLngBounds(
-      new google.maps.LatLng(48.428611, -123.365556),
-      new google.maps.LatLng(50.428611, -124.365556));
-
-    var input = document.getElementById('starting_point');
-    var options = {
-      bounds: defaultBounds,
-      types: ['establishment']
-    };
-
-    autocomplete = new google.maps.places.Autocomplete(input, options);
-    autocomplete.bindTo('bounds', map);
-
 }
 
 function mapRoute(routes) {

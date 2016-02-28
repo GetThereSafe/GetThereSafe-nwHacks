@@ -14,7 +14,7 @@ db = SQLAlchemy(app)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index.html', data={'API_KEY': GOOGLE_API_KEY})
 
 
 @app.route('/route', methods=['POST'])
