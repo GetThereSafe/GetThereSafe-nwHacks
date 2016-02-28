@@ -28,6 +28,7 @@ header{
   text-align: center;
   letter-spacing: 1px;
   padding: 10px;
+  padding-top: 2%;
 }
 #shadow h3{
   font-family: 'Questrial', sans-serif;
@@ -39,6 +40,12 @@ header{
 header span{
   font-weight: 300;
   color: #46C7C7
+}
+/* Logo */
+#shadow img{
+  float: left;
+  width: 15%;
+  height: 10%;
 }
 
 /*Google Map */
@@ -265,6 +272,14 @@ html, body { height: 100%; width: 100%; font-family: Helvetica, Arial, sans-seri
 #text-wrap p{
   font-size: 15px;
 }
+#shadow h1{
+  font-size: 25px;
+}
+#shadow img{
+  float: left;
+  width: 15%;
+  height: 15%;
+}
 /* Text Field Styling */
 .textbox{
   padding: 5px;
@@ -311,6 +326,14 @@ html, body { height: 100%; width: 100%; font-family: Helvetica, Arial, sans-seri
 #text-wrap p{
   font-size: 15px;
 }
+#shadow h1{
+  font-size: 20px;
+}
+#shadow img{
+  float: left;
+  width: 15%;
+  height: 15%;
+}
 /* Text Field Styling */
 .textbox{
   padding: 5px;
@@ -355,6 +378,14 @@ html, body { height: 100%; width: 100%; font-family: Helvetica, Arial, sans-seri
 }
 #text-wrap p{
   font-size: 15px;
+}
+#shadow h1{
+  font-size: 15px;
+}
+#shadow img{
+  float: left;
+  width: 15%;
+  height: 15%;
 }
 /* Text Field Styling */
 .textbox{
@@ -402,6 +433,14 @@ html, body { height: 100%; width: 100%; font-family: Helvetica, Arial, sans-seri
 }
 #text-wrap p{
   font-size: 10px;
+}
+#shadow h1{
+  font-size: 10px;
+}
+#shadow img{
+  float: left;
+  width: 15%;
+  height: 15%;
 }
 /* Text Field Styling */
 .textbox{
