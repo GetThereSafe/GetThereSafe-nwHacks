@@ -52,6 +52,9 @@ header span{
 }
 
 /* Text Field */
+.textarea{
+  vertical-align: middle;
+}
 #text-wrap{
   position: fixed;
   text-align: center;
