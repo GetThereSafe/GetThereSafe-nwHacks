@@ -58,7 +58,7 @@
 }
 
 /* Nav Trigger */
-.nav-trigger {
+.nav-trigger{
   /* critical styles - hide the checkbox input */
   position: absolute;
   clip: rect(0, 0, 0, 0);
