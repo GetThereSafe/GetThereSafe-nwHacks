@@ -118,6 +118,9 @@ header span{
 
 
 /* Footer */
+.bottom{
+  margin-bottom: 0px;
+}
 #footer,
 #footer a{
   border-top: 1px solid #4D4E50;
