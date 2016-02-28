@@ -74,6 +74,18 @@ def _has_nearby_lightsource(coord, light_source_coords):
     return False
 
 
+
+def _upload_csv():
+    import csv
+    with open("CityLight.csv", "rb") as f:
+        reader = csv.reader(f, delimiter="\t")
+        for i, line in enumerate(reader):
+            print 'line[{}] = {}'.format(i, line)
+
+
+
+
+
 def _get_distance_between_points(coord_tuple_a, coord_tuple_b):
     # Taken from http://bit.ly/21AAYXb
     R = 6373.0
