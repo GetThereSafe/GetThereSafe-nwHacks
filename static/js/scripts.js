@@ -56,7 +56,7 @@ function getRoutes(starting_point, ending_point) {
       error: function() {
           $("#error").show();
       }
-    }).done(function() {
+  }).always(function() {
         $("#spinner").hide();
     });
 }
