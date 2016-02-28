@@ -1,7 +1,7 @@
 from flask import Flask, render_template
 import os
 app = Flask(__name__)
-
+GOOGLE_API_KEY = os.environ.get('GOOGLE_API_KEY')
 
 @app.route('/')
 def index():
