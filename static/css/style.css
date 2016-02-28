@@ -9,7 +9,7 @@
 
 /* Header */
 header{
-  position: fixed;
+  position: absolute;
   overflow: hidden;
   background-color: #FFFFFF;
   padding: 20px 20px;
@@ -44,14 +44,19 @@ header span{
 /*Google Map */
 .divmap{
   top: 100px;
+  bottom: 100px;
 }
 #map{
   float: right;
   width: 50%;
   margin: 0 auto;
-  width: 800px;
-  height: 800px;
+  width: 75%;
+  height: 450px;
   background-color: #CCC;
+  border: 4px solid #DDD;
+  box-shadow: 0 0 5px #333;
+  position: relative;
+  margin-bottom: 15px;
 }
 
 /* Text Field */
@@ -59,9 +64,9 @@ header span{
   top: 100px;
 }
 #text-wrap{
-  position: fixed;
+  position: relative;
   text-align: center;
-  float: right;
+  float: left;
   padding: 5px;
   background: white;
   border: 1px double #DDD;
@@ -69,20 +74,62 @@ header span{
   box-shadow: 0 0 5px #333;
   color: #666;
   outline: none;
-  height:325px;
+  height:100%;
   width: 225px;
-}
-#text-wrap h1{
-  font-family: 'Questrial', sans-serif;
-  font-size: 35px;
+  margin-bottom: 15px;
 }
 #text-wrap h2{
   font-family: 'Questrial', sans-serif;
-  font-size: 25px;
+  font-weight: 900;
+  font-size: 1.5em;
+  padding-bottom: 8%;
 }
 #text-wrap p{
   font-family: 'Questrial', sans-serif;
-  font-size: 10px;
+  font-size: 0.80em;
+  padding-bottom: 4%;
+}
+/* Text Field Styling */
+.textbox{
+  padding: 5px;
+  background: white;
+  border: 1px double #DDD;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #333;
+  color: #666;
+  outline: none;
+  height:25px;
+  width: 175px;
+}
+.button{
+  align-items: center;
+  padding: 5px;
+  background: #BCC6CC;
+  border: 1px double #DDD;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #333;
+  color: #666;
+  outline: none;
+  height:25px;
+  width: 75px;
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+
+/* Footer */
+#footer,
+#footer a{
+  border-top: 1px solid #4D4E50;
+  background-color: #333333;
+  max-height: 50px;
+  opacity: 0.95;
+  text-decoration: none;
+  color: black;
+  text-align: left;
+}
+#footer a:hover{
+  text-decoration: line-through;
 }
 
 /* Site Wrapper - Everything that isn't navigation */
@@ -113,104 +160,263 @@ body {
 html, body { height: 100%; width: 100%; font-family: Helvetica, Arial, sans-serif; }
 
 /* Media Queries */
-@media only screen and (max-width: 1200px){
-  #map{
-    float: left;
-    width: 50%;
-    margin: 0 auto;
-    width: 500px;
-    height: 400px;
-    background-color: #CCC;
-  }
-  #text-wrap{
-    float: left;
-  }
-  #text-wrap h1{
-    font-family: 'Questrial', sans-serif;
-    font-size: 25px;
-  }
-  #text-wrap h2{
-    font-family: 'Questrial', sans-serif;
-    font-size: 15px;
-  }
-  #text-wrap p{
-    font-family: 'Questrial', sans-serif;
-    font-size: 10px;
-  }
-
+@media only screen and (max-width: 1245px){
+/*Google Map */
+.divmap{
+  top: 100px;
+  bottom: 100px;
 }
-@media only screen and (max-width: 750px){
-  #map{
-    float: left;
-    width: 50%;
-    margin: 0 auto;
-    width: 400px;
-    height: 200px;
-    background-color: #CCC;
-  }
-  #text-wrap{
-    float: left;
-  }
-  #text-wrap h1{
-    font-family: 'Questrial', sans-serif;
-    font-size: 25px;
-  }
-  #text-wrap h2{
-    font-family: 'Questrial', sans-serif;
-    font-size: 15px;
-  }
-  #text-wrap p{
-    font-family: 'Questrial', sans-serif;
-    font-size: 10px;
-  }
+#map{
+  float: right;
+  width: 50%;
+  margin: 0 auto;
+  width: 70%;
+  height: 450px;
+  position: relative;
+  margin-bottom: 15px;
 }
-@media only screen and (max-width: 400px){
-  #map{
-    float: left;
-    width: 50%;
-    margin: 0 auto;
-    width: 200px;
-    height: 100px;
-    background-color: #CCC;
-  }
-  #text-wrap{
-    float: left;
-  }
-  #text-wrap h1{
-    font-family: 'Questrial', sans-serif;
-    font-size: 10px;
-  }
-  #text-wrap h2{
-    font-family: 'Questrial', sans-serif;
-    font-size: 8px;
-  }
-  #text-wrap p{
-    font-family: 'Questrial', sans-serif;
-    font-size: 5px;
-  }
+/* Text Field */
+.textarea{
+  top: 100px;
 }
-
+#text-wrap{
+  position: relative;
+  text-align: center;
+  float: left;
+  padding: 5px;
+  outline: none;
+  height:100%;
+  width: 225px;
+}
+#text-wrap h2{
+  font-size: 25px;
+}
+#text-wrap p{
+  font-size: 15px;
+}
+@media only screen and (max-width: 1000px){
+/*Google Map */
+.divmap{
+  top: 100px;
+  bottom: 100px;
+}
+#map{
+  float: right;
+  width: 50%;
+  margin: 0 auto;
+  width: 70%;
+  height: 450px;
+  position: relative;
+  margin-bottom: 15px;
+}
+/* Text Field */
+.textarea{
+  top: 100px;
+}
+#text-wrap{
+  position: relative;
+  text-align: center;
+  float: left;
+  padding: 5px;
+  outline: none;
+  height:100%;
+  width: 200px;
+}
+#text-wrap h2{
+  font-size: 20px;
+}
+#text-wrap p{
+  font-size: 15px;
+}
+@media only screen and (max-width: 860px){
+/*Google Map */
+.divmap{
+  top: 100px;
+  bottom: 100px;
+}
+#map{
+  float: right;
+  width: 50%;
+  margin: 0 auto;
+  width: 68%;
+  height: 450px;
+  position: relative;
+  margin-bottom: 15px;
+}
+/* Text Field */
+.textarea{
+  top: 100px;
+}
+#text-wrap{
+  position: relative;
+  text-align: center;
+  float: left;
+  padding: 5px;
+  outline: none;
+  height:100%;
+  width: 175px;
+}
+#text-wrap h2{
+  font-size: 20px;
+}
+#text-wrap p{
+  font-size: 15px;
+}
 /* Text Field Styling */
 .textbox{
   padding: 5px;
-  background: white;
-  border: 1px double #DDD;
-  border-radius: 5px;
-  box-shadow: 0 0 5px #333;
-  color: #666;
-  outline: none;
   height:25px;
-  width: 175px;
+  width: 150px;
 }
 .button{
-  align-items: center;
   padding: 5px;
   background: #BCC6CC;
-  border: 1px double #DDD;
-  border-radius: 5px;
-  box-shadow: 0 0 5px #333;
-  color: #666;
-  outline: none;
   height:25px;
-  width: 75px;
+  width: 50px;
+}
+@media only screen and (max-width: 735px){
+/*Google Map */
+.divmap{
+  top: 100px;
+  bottom: 100px;
+}
+#map{
+  float: right;
+  width: 50%;
+  margin: 0 auto;
+  width: 65%;
+  height: 450px;
+  position: relative;
+  margin-bottom: 15px;
+}
+/* Text Field */
+.textarea{
+  top: 100px;
+}
+#text-wrap{
+  position: relative;
+  text-align: center;
+  float: left;
+  padding: 5px;
+  outline: none;
+  height:100%;
+  width: 175px;
+}
+#text-wrap h2{
+  font-size: 20px;
+}
+#text-wrap p{
+  font-size: 15px;
+}
+/* Text Field Styling */
+.textbox{
+  padding: 5px;
+  height:25px;
+  width: 150px;
+}
+.button{
+  padding: 5px;
+  background: #BCC6CC;
+  height:25px;
+  width: 50px;
+}
+@media only screen and (max-width: 670px){
+/*Google Map */
+.divmap{
+  top: 100px;
+  bottom: 100px;
+}
+#map{
+  width: 50%;
+  margin: 0 auto;
+  width: 100%;
+  height: 400px;
+  position: relative;
+  margin-bottom: 15px;
+}
+/* Text Field */
+.textarea{
+  top: 100px;
+}
+#text-wrap{
+  position: relative;
+  text-align: center;
+  float: left;
+  padding: 5px;
+  outline: none;
+  height:80%;
+  width: 100%;
+}
+#text-wrap h2{
+  font-size: 20px;
+}
+#text-wrap p{
+  font-size: 15px;
+}
+/* Text Field Styling */
+.textbox{
+  padding: 5px;
+  height:25px;
+  width: 150px;
+}
+.button{
+  padding: 5px;
+  background: #BCC6CC;
+  height:25px;
+  width: 50px;
+  margin-bottom: 2%;
+  margin-top: 2%;
+}
+@media only screen and (max-width: 520px){
+/*Google Map */
+.divmap{
+  top: 100px;
+  bottom: 100px;
+}
+#map{
+  width: 50%;
+  margin: 0 auto;
+  width: 100%;
+  height: 300px;
+  position: relative;
+  margin-bottom: 15px;
+}
+/* Text Field */
+.textarea{
+  top: 100px;
+}
+#text-wrap{
+  position: relative;
+  text-align: center;
+  float: left;
+  padding: 5px;
+  outline: none;
+  height:70%;
+  width: 100%;
+}
+#text-wrap h2{
+  font-size: 15px;
+}
+#text-wrap p{
+  font-size: 10px;
+}
+/* Text Field Styling */
+.textbox{
+  padding: 5px;
+  height:20px;
+  width: 100px;
+}
+.button{
+  padding: 5px;
+  background: #BCC6CC;
+  height:20px;
+  width: 50px;
+}
+/* Header */
+#shadow h3{
+  font-family: 'Questrial', sans-serif;
+  font-size: 0.8em;
+  text-align: center;
+  letter-spacing: 1px;
+  padding: 10px;
 }
