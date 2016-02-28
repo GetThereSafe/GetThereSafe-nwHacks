@@ -13,12 +13,10 @@ def index():
 
 @app.route('/route', methods=['POST'])
 def get_routes():
-    try:
-        return gmaps.geocode('1600 Amphitheatre Parkway, Mountain View, CA')
-    except Exception as e:
-        return e
+    reverse_geocode_result = gmaps.reverse_geocode((40.714224, -73.961452))
+    return reverse_geocode_result
 
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
-    app.run(host='0.0.0.0', port=port)
+    app.run(host='0.0.0.0', port=port, debug=True)
