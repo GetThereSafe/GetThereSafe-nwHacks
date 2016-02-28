@@ -472,6 +472,10 @@ html, body { height: 100%; width: 100%; font-family: Helvetica, Arial, sans-seri
     text-align:center;
     z-index:1234;
     overflow: auto;
-    width: 100px; /* width of the spinner gif */
-    height: 102px; /*hight of the spinner gif +2px to fix IE8 issue */
+    width: 50; /* width of the spinner gif */
+    height: 52px; /*hight of the spinner gif +2px to fix IE8 issue */
+}
+
+#error p {
+    color: red;
 }
