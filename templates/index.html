@@ -49,6 +49,13 @@
       <!-- </div> -->
 
     </div>
+
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=geometry"></script>
+    <script type=text/javascript src="{{
+    url_for('static', filename='js/scripts.js') }}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
+    async defer></script>
     <script type="text/javascript">
         $(document).ready(function(){
             $("#spinner").bind("ajaxSend", function() {
@@ -60,12 +67,5 @@
             });
         });
     </script>
-
-    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?libraries=geometry"></script>
-    <script type=text/javascript src="{{
-    url_for('static', filename='js/scripts.js') }}"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
-    async defer></script>
 </body>
 </html>
