@@ -9,7 +9,7 @@
 
 /* Header */
 header{
-  position: fixed;
+  position: absolute;
   overflow: hidden;
   background-color: #FFFFFF;
   padding: 20px 20px;
@@ -59,7 +59,7 @@ header span{
   top: 100px;
 }
 #text-wrap{
-  position: fixed;
+  position: relative;
   text-align: center;
   float: right;
   padding: 5px;
