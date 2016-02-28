@@ -1,7 +1,23 @@
-#map {
-    width: 50%;
-    margin: 0 auto;
-    width: 1000px;
-    height: 800px;
-    background-color: #CCC;
-  }
+#map{
+  float: left;
+  width: 50%;
+  margin: 0 auto;
+  width: 1000px;
+  height: 800px;
+  background-color: #CCC;
+}
+#text-wrap{
+  float: left;
+}
+#text-wrap h1{
+  font-family: 'Questrial', sans-serif;
+  font-size: 35px;
+}
+#text-wrap h2{
+  font-family: 'Questrial', sans-serif;
+  font-size: 25px;
+}
+#text-wrap p{
+  font-family: 'Questrial', sans-serif;
+  font-size: 10px;
+}
