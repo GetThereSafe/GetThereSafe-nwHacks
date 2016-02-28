@@ -25,6 +25,8 @@ def get_routes():
     app.logger.warning('%s AND %s' % (start, end))
 
     routes = gmaps.directions(start, end, alternatives=True)
+    if not routes:
+        raise Exception
     sorted_routes = _get_best_route(routes)
     return json.dumps(sorted_routes)
 
