@@ -192,7 +192,7 @@ html, body { height: 100%; width: 100%; font-family: Helvetica, Arial, sans-seri
 .button{
   align-items: center;
   padding: 5px;
-  background: white;
+  background: #BCC6CC;
   border: 1px double #DDD;
   border-radius: 5px;
   box-shadow: 0 0 5px #333;
