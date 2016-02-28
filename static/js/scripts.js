@@ -10,7 +10,7 @@ function initMap() {
     });
 
     google.maps.event.addListener(map, 'click', function(event) {
-        console.log(event.latLng);
+        console.log(event.latLng.lat());
     });
 
 }
