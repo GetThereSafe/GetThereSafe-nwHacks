@@ -56,7 +56,7 @@ def _get_best_route(routes):
         route_rank.append([light_sources, route, decoded_route_coords])
 
     # Sort the best routes
-    route_rank.sort(key=lambda route: route[0])
+    route_rank.sort(key=lambda route: route[0], reverse=True)
 
     return route_rank
 

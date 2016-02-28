@@ -34,7 +34,10 @@
             <input class="textbox" type="text" id="starting_point" placeholder="Current Location - 123 Street Victoria"> <br> <br>
             <input class="textbox" type="text" id="ending_point" placeholder="Destination"> <br> <br>
           </form>
-          <button class="button" id="bttn">Search</button>
+          <button class="button" id="bttn" style="cursor: pointer;">Search</button>
+          <div id="spinner" class="spinner" style="display:none;">
+            <img id="img-spinner" src="{{ url_for('static',filename='spinner.gif') }}" alt="Loading"/>
+          </div>
         </div>
       </div>
 
@@ -53,5 +56,6 @@
     url_for('static', filename='js/scripts.js') }}"></script>
     <script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
     async defer></script>
+
 </body>
 </html>
