@@ -68,6 +68,9 @@
 }
 /* Active Menu*/
 .nav-trigger--rot.is-active{
+  /* critical styles - hide the checkbox input */
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
 }
 .nav-trigger--rot.is-active span{
     transform: rotate(90deg);
