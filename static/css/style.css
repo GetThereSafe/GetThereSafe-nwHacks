@@ -44,14 +44,16 @@ header span{
 /*Google Map */
 .divmap{
   top: 100px;
+  padding-bottom: 5px;
 }
 #map{
   float: right;
   width: 50%;
   margin: 0 auto;
   width: 800px;
-  height: 800px;
+  height: 500px;
   background-color: #CCC;
+  border: 4px solid #DDD;
 }
 
 /* Text Field */
@@ -61,7 +63,7 @@ header span{
 #text-wrap{
   position: relative;
   text-align: center;
-  float: right;
+  float: left;
   padding: 5px;
   background: white;
   border: 1px double #DDD;
@@ -83,6 +85,9 @@ header span{
 #text-wrap p{
   font-family: 'Questrial', sans-serif;
   font-size: 10px;
+}
+footer{
+  height: 1%;
 }
 
 /* Site Wrapper - Everything that isn't navigation */
