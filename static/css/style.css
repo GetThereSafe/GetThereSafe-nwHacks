@@ -74,21 +74,49 @@ header span{
   box-shadow: 0 0 5px #333;
   color: #666;
   outline: none;
-  height:325px;
+  height:100%;
   width: 225px;
-}
-#text-wrap h1{
-  font-family: 'Questrial', sans-serif;
-  font-size: 35px;
+  margin-bottom: 15px;
 }
 #text-wrap h2{
   font-family: 'Questrial', sans-serif;
-  font-size: 25px;
+  font-weight: 900;
+  font-size: 1.5em;
+  padding-bottom: 8%;
 }
 #text-wrap p{
   font-family: 'Questrial', sans-serif;
-  font-size: 10px;
+  font-size: 0.80em;
+  padding-bottom: 4%;
 }
+/* Text Field Styling */
+.textbox{
+  padding: 5px;
+  background: white;
+  border: 1px double #DDD;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #333;
+  color: #666;
+  outline: none;
+  height:25px;
+  width: 175px;
+}
+.button{
+  align-items: center;
+  padding: 5px;
+  background: #BCC6CC;
+  border: 1px double #DDD;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #333;
+  color: #666;
+  outline: none;
+  height:25px;
+  width: 75px;
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+
 /* Footer */
 #footer,
 #footer a{
@@ -131,32 +159,6 @@ body {
 *,*:before,*:after{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;margin:0;padding:0;}
 html, body { height: 100%; width: 100%; font-family: Helvetica, Arial, sans-serif; }
 
-/* Text Field Styling */
-.textbox{
-  padding: 5px;
-  background: white;
-  border: 1px double #DDD;
-  border-radius: 5px;
-  box-shadow: 0 0 5px #333;
-  color: #666;
-  outline: none;
-  height:25px;
-  width: 175px;
-}
-.button{
-  align-items: center;
-  padding: 5px;
-  background: #BCC6CC;
-  border: 1px double #DDD;
-  border-radius: 5px;
-  box-shadow: 0 0 5px #333;
-  color: #666;
-  outline: none;
-  height:25px;
-  width: 75px;
-}
-
-
 /* Media Queries */
 @media only screen and (max-width: 1245px){
 /*Google Map */
@@ -183,17 +185,14 @@ html, body { height: 100%; width: 100%; font-family: Helvetica, Arial, sans-seri
   float: left;
   padding: 5px;
   outline: none;
-  height:325px;
+  height:100%;
   width: 225px;
-}
-#text-wrap h1{
-  font-size: 35px;
 }
 #text-wrap h2{
   font-size: 25px;
 }
 #text-wrap p{
-  font-size: 10px;
+  font-size: 15px;
 }
 @media only screen and (max-width: 1000px){
 /*Google Map */
@@ -220,17 +219,14 @@ html, body { height: 100%; width: 100%; font-family: Helvetica, Arial, sans-seri
   float: left;
   padding: 5px;
   outline: none;
-  height:300px;
+  height:100%;
   width: 200px;
-}
-#text-wrap h1{
-  font-size: 30px;
 }
 #text-wrap h2{
   font-size: 20px;
 }
 #text-wrap p{
-  font-size: 10px;
+  font-size: 15px;
 }
 @media only screen and (max-width: 860px){
 /*Google Map */
@@ -257,17 +253,14 @@ html, body { height: 100%; width: 100%; font-family: Helvetica, Arial, sans-seri
   float: left;
   padding: 5px;
   outline: none;
-  height:275px;
+  height:100%;
   width: 175px;
 }
-#text-wrap h1{
-  font-size: 25px;
-}
 #text-wrap h2{
-  font-size: 15px;
+  font-size: 20px;
 }
 #text-wrap p{
-  font-size: 10px;
+  font-size: 15px;
 }
 /* Text Field Styling */
 .textbox{
@@ -306,17 +299,14 @@ html, body { height: 100%; width: 100%; font-family: Helvetica, Arial, sans-seri
   float: left;
   padding: 5px;
   outline: none;
-  height:275px;
+  height:100%;
   width: 175px;
 }
-#text-wrap h1{
-  font-size: 25px;
-}
 #text-wrap h2{
-  font-size: 15px;
+  font-size: 20px;
 }
 #text-wrap p{
-  font-size: 10px;
+  font-size: 15px;
 }
 /* Text Field Styling */
 .textbox{
@@ -340,7 +330,7 @@ html, body { height: 100%; width: 100%; font-family: Helvetica, Arial, sans-seri
   width: 50%;
   margin: 0 auto;
   width: 100%;
-  height: 300px;
+  height: 400px;
   position: relative;
   margin-bottom: 15px;
 }
@@ -354,17 +344,14 @@ html, body { height: 100%; width: 100%; font-family: Helvetica, Arial, sans-seri
   float: left;
   padding: 5px;
   outline: none;
-  height:230px;
+  height:80%;
   width: 100%;
 }
-#text-wrap h1{
-  font-size: 25px;
-}
 #text-wrap h2{
-  font-size: 15px;
+  font-size: 20px;
 }
 #text-wrap p{
-  font-size: 10px;
+  font-size: 15px;
 }
 /* Text Field Styling */
 .textbox{
@@ -377,6 +364,8 @@ html, body { height: 100%; width: 100%; font-family: Helvetica, Arial, sans-seri
   background: #BCC6CC;
   height:25px;
   width: 50px;
+  margin-bottom: 2%;
+  margin-top: 2%;
 }
 @media only screen and (max-width: 520px){
 /*Google Map */
@@ -402,17 +391,14 @@ html, body { height: 100%; width: 100%; font-family: Helvetica, Arial, sans-seri
   float: left;
   padding: 5px;
   outline: none;
-  height:200px;
+  height:70%;
   width: 100%;
 }
-#text-wrap h1{
-  font-size: 20px;
-}
 #text-wrap h2{
-  font-size: 10px;
+  font-size: 15px;
 }
 #text-wrap p{
-  font-size: 7px;
+  font-size: 10px;
 }
 /* Text Field Styling */
 .textbox{
@@ -426,6 +412,7 @@ html, body { height: 100%; width: 100%; font-family: Helvetica, Arial, sans-seri
   height:20px;
   width: 50px;
 }
+/* Header */
 #shadow h3{
   font-family: 'Questrial', sans-serif;
   font-size: 0.8em;
