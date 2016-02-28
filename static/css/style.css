@@ -41,6 +41,10 @@ header span{
   color: #46C7C7
 }
 /* Header Image */
+header img{
+  width: 20%;
+  height: 15%;
+}
 
 /*Google Map */
 .divmap{
