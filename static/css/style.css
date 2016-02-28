@@ -12,7 +12,7 @@ header{
   position: absolute;
   overflow: hidden;
   background-color: #FFFFFF;
-  padding: 20px 20px;
+  padding: 10px 10px;
   width: 100%;
 }
 #shadow{
@@ -118,6 +118,9 @@ header span{
 
 
 /* Footer */
+.bottom{
+  margin-bottom: 0px;
+}
 #footer,
 #footer a{
   border-top: 1px solid #4D4E50;
