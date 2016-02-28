@@ -11,7 +11,7 @@ header{
   position: fixed;
   overflow: hidden;
   background-color: #FFFFFF;
-  padding: 20px 0;
+  padding: 20px 20;
   width: 100%;
 }
 #shadow{
