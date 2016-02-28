@@ -21,16 +21,18 @@ function mapRoute(routes) {
         }
         console.log(latlngPoints);
         var strokeColor = '#FF0000'
+        var strokeWeight = 2
         if(j >= 1){
             strokeColor = '#0000FF'
+            strokeWeight = 1
         }
 
         var polyline = new google.maps.Polyline({
             path: latlngPoints,
             geodesic: true,
-            strokeColor: '#FF0000',
+            strokeColor: strokeColor,
             strokeOpacity: 0.5,
-            strokeWeight: 2
+            strokeWeight: strokeWeight
         });
 
         polyline.setMap(map);
