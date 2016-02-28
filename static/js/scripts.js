@@ -15,8 +15,10 @@ function initMap() {
         latlngobj = event.latLng;
         var latlng = {lat: parseFloat(latlngobj.lat()), lng: parseFloat(latlngobj.lng())};
         geocoder.geocode({'location': latlng}, function(event, result){
-            console.log(event);
-            console.log(result);
+            if(!!event){
+                var address = event[0].formatted_address;
+                console.log(address);
+            }
         });
     });
 
