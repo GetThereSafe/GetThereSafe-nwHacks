@@ -1,3 +1,9 @@
+/*Font*/
+p{
+  font-family: 'Questrial', sans-serif;
+  color: white;
+}
+
 /* Navigation Menu - Background */
 .navigation {
   /* critical sizing and position styles */
