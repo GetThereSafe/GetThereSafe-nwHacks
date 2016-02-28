@@ -8,7 +8,7 @@ from polyline.codec import PolylineCodec
 app = Flask(__name__)
 GOOGLE_API_KEY = os.environ.get('GOOGLE_API_KEY')
 gmaps = googlemaps.Client(key=GOOGLE_API_KEY)
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
+app.config.from_object(os.environ['APP_SETTINGS'])
 db = SQLAlchemy(app)
 
 
