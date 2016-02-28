@@ -13,7 +13,8 @@ function getRoutes(starting_point, ending_point) {
       type: 'POST',
       data: { start: starting_point, end:ending_point},
       success: function(data) {
-          alert(data);
+          routes = JSON.parse(data)
+          console.log(routes);
       }
     });
 }
