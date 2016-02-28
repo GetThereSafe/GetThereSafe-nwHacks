@@ -1,12 +1,15 @@
-$("#bttn").click(function() {
-    alert("hey");
-});
-
 function initMap() {
-    console.log('bla');
     var mapDiv = document.getElementById('map');
     var map = new google.maps.Map(mapDiv, {
-      center: {lat: 44.540, lng: -78.546},
-      zoom: 8
+      center: {lat: 48.428611, lng: -123.365556},
+      zoom: 14
     });
 }
+
+var getRoutes = function() {
+    $.post( "/route", function(data) {
+        alert(data);
+    });
+};
+
+$("#bttn").click(getRoutes);

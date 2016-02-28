@@ -113,7 +113,9 @@ code {
 html, body { height: 100%; width: 100%; font-family: Helvetica, Arial, sans-serif; }
 
 #map {
-    width: 900px;
-    height: 700px;
+    width: 50%;
+    margin: 0 auto;
+    width: 1000px;
+    height: 800px;
     background-color: #CCC;
   }
