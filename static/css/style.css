@@ -112,3 +112,9 @@ code {
 /* Micro reset */
 *,*:before,*:after{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;margin:0;padding:0;}
 html, body { height: 100%; width: 100%; font-family: Helvetica, Arial, sans-serif; }
+
+#map {
+    width: 900px;
+    height: 700px;
+    background-color: #CCC;
+  }

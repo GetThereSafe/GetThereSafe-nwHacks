@@ -27,10 +27,14 @@
       <li class="nav-item"><a href="#">Contact</a></li>
   </ul>
 
+  <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+  <label for="nav-trigger"></label>
 
-    <div id="map-canvas"></div>
+    <div class="site-wrap">
 
+        <div id="map"></div>
 
+    </div>
     <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
     <script type=text/javascript src="{{
     url_for('static', filename='js/scripts.js') }}"></script>
