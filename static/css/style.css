@@ -52,6 +52,7 @@ header span{
 #text-wrap{
   float: left;
   padding-left: 10px;
+  padding-right: 10px;
   background-color: #FFFFFF;
   width: 200px;
   height: 300px;
