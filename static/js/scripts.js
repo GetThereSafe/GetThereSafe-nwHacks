@@ -9,8 +9,8 @@ function initMap() {
       zoom: 14
     });
 
-    map.addListener('dbclick', function(event) {
-        console.log(event);
+    google.maps.event.addListener(map, 'click', function(event) {
+        console.log(event.latLng);
     });
 
 }
