@@ -43,7 +43,7 @@ header span{
 
 /*Google Map */
 #map{
-  float: left;
+  float: right;
   width: 50%;
   margin: 0 auto;
   width: 800px;
