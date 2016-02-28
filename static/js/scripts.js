@@ -20,11 +20,11 @@ function mapRoute(routes) {
             latlngPoints.push({lat: routes[j][2][i][0], lng: routes[j][2][i][1]});
         }
         console.log(latlngPoints);
-        var strokeColor = '#FF0000'
-        var strokeWeight = 2
+        var strokeColor = '#FF0000';
+        var strokeWeight = 3;
         if(j >= 1){
-            strokeColor = '#0000FF'
-            strokeWeight = 1
+            strokeColor = '#0000FF';
+            strokeWeight = 1;
         }
 
         var polyline = new google.maps.Polyline({
@@ -36,7 +36,7 @@ function mapRoute(routes) {
         });
 
         polyline.setMap(map);
-        polylines.push(polyline)
+        polylines.push(polyline);
     }
 }
 
