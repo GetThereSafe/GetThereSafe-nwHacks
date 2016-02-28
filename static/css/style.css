@@ -426,3 +426,10 @@ html, body { height: 100%; width: 100%; font-family: Helvetica, Arial, sans-seri
   height:20px;
   width: 50px;
 }
+#shadow h3{
+  font-family: 'Questrial', sans-serif;
+  font-size: 0.8em;
+  text-align: center;
+  letter-spacing: 1px;
+  padding: 10px;
+}
