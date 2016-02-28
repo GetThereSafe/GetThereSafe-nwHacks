@@ -21,13 +21,12 @@ header{
   z-index: 999;
   position: fixed;
 }
-header h4,
-header span{
+#shadow h1{
   font-family: 'Questrial', sans-serif;
   font-size: 2em;
   text-align: center;
   letter-spacing: 1px;
-  padding: 0 10px;
+  padding: 10 10px;
 }
 header span{
   font-weight: 300;
