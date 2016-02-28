@@ -1,6 +1,7 @@
 import googlemaps
 import os
 from flask import Flask, render_template, request
+import json
 app = Flask(__name__)
 GOOGLE_API_KEY = os.environ.get('GOOGLE_API_KEY')
 gmaps = googlemaps.Client(key=GOOGLE_API_KEY)
@@ -13,7 +14,9 @@ def index():
 
 @app.route('/route', methods=['POST'])
 def get_routes():
-    return gmaps.geocode('1600 Amphitheatre Parkway, Mountain View, CA')
+    print request
+    bla = gmaps.geocode('1600 Amphitheatre Parkway, Mountain View, CA')
+    return json.dumps(bla)
 
 
 if __name__ == '__main__':

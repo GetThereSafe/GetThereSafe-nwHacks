@@ -6,10 +6,17 @@ function initMap() {
     });
 }
 
-var getRoutes = function() {
-    $.post( "/route", function(data) {
+function getRoutes(starting_point, ending_point) {
+    $.post( "/route", {
+        start: starting_point,
+        end: ending_point
+    }, function(data) {
         alert(data);
     });
-};
+}
 
-$("#bttn").click(getRoutes);
+$("#bttn").click(function() {
+    starting_point = $("#starting_point").val();
+    ending_point = $("#ending_point").val();
+    routes = getRoutes(starting_point, ending_point);
+});
