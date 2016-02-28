@@ -8,4 +8,4 @@ class Coord(db.Model):
 
     def __init__(self, lng, lat):
         self.lng = lng
-        self.lat = lan
+        self.lat = lat
