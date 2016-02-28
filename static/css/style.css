@@ -43,7 +43,7 @@ header span{
 
 /*Google Map */
 .divmap{
-  padding-top: 100px;
+  top: 100px;
 }
 #map{
   float: right;
@@ -55,6 +55,9 @@ header span{
 }
 
 /* Text Field */
+.textarea{
+  top: 100px;
+}
 #text-wrap{
   position: fixed;
   text-align: center;
