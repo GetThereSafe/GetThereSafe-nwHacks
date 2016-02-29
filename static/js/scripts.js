@@ -76,10 +76,8 @@ $("#bttn").click(function() {
     starting_point = $("#starting_point").val();
     ending_point = $("#ending_point").val();
     // Remove current path
-    if(!!polylines) {
-        for(var i = 0; i < polylines.length; i++) {
-            polylines[i].setMap(null);
-        }
+    for(var i = 0; i < polylines.length; i++) {
+        polylines[i].setMap(null);
     }
 
     routes = getRoutes(starting_point, ending_point);

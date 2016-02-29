@@ -34,6 +34,9 @@ def get_routes():
 def _get_best_route(routes):
     from model import Coord
     # GET THE COORDS FROM DATABASE
+    # What we sould do is get all coords within 45 meters of first coord, then keep using that data.
+    # Once a coordinate doesnt have any lights near it, query for 45 meters around it to see if our old data is stale
+    # If it is, set that as the new 45m data. If not, keep going with the old data. Maybe use PostGIS or Mongo (both have GIS)
     all_coordinates = Coord.query.all()
     light_source_coords = []
     for coord in all_coordinates:
@@ -68,9 +71,9 @@ def _get_coords_from_polyline(polyline):
 
 
 def _has_nearby_lightsource(coord, light_source_coords):
-    # Check if any lightsource in the light_source_coords is within six meters of the route coordinate
+    # Check if any lightsource in the light_source_coords is within eight meters of the route coordinate
     for light_coord in light_source_coords:
-        if _get_distance_between_points(coord, light_coord) <= 6:
+        if _get_distance_between_points(coord, light_coord) <= 8:
             return True
     return False
 
