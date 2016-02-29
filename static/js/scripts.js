@@ -28,7 +28,7 @@ function mapRoute(routes) {
         for(var i = 0; i < routes[j][2].length; i++) {
             latlngPoints.push({lat: routes[j][2][i][0], lng: routes[j][2][i][1]});
         }
-        var strokeColor = '#FF0000';
+        var strokeColor = '#00FF00';
         var strokeWeight = 3;
         if(j >= 1){
             strokeColor = '#0000FF';
@@ -58,7 +58,7 @@ function getRoutes(starting_point, ending_point) {
     $.ajax({
       url: '/route',
       type: 'POST',
-      data: { start: starting_point, end:ending_point},
+      data: { start: starting_point, end: ending_point},
       success: function(data) {
           routes = JSON.parse(data);
           mapRoute(routes);
