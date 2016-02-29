@@ -32,7 +32,7 @@ function mapRoute(routes) {
         var strokeWeight = 3;
         if(j >= 1){
             strokeColor = '#0000FF';
-            strokeWeight = 1.5;
+            strokeWeight = 1;
         }
 
         var polyline = new google.maps.Polyline({
