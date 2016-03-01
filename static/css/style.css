@@ -15,6 +15,7 @@ header{
   padding: 10px 10px;
   width: 100%;
 }
+/* Shadow */
 #shadow{
   -moz-box-shadow: 0px 0px 11px rgba(0,0,0,1);
   -webkit-box-shadow: 0px 0px 11px rgba(0,0,0,1);
@@ -43,26 +44,20 @@ header span{
 }
 
 /*Google Map */
-.divmap{
+.divtext{
   top: 100px;
   bottom: 100px;
 }
 #map{
+  top: 100px;
+  margin-bottom: 5%;
   float: right;
-  width: 50%;
-  margin: 0 auto;
   width: 75%;
   height: 75%;
   background-color: #CCC;
   border: 4px solid #DDD;
   box-shadow: 0 0 5px #333;
   position: relative;
-  margin-bottom: 15px;
-}
-
-/* Text Field */
-.textarea{
-  top: 100px;
 }
 
 /* Text Info */
@@ -98,6 +93,12 @@ header span{
   font-size: 0.80em;
   padding-bottom: 4%;
 }
+#text-wrap p .instruction{
+  margin: 5px;
+}
+#text-wrap p .mapLoc{
+  font-weight: bold;
+}
 
 /* Text Field Styling */
 .textbox{
@@ -126,33 +127,88 @@ header span{
   margin-top: 10%;
   margin-bottom: 10%;
 }
+.button #bttn{
+  cursor: pointer;
+}
+/* Loading Icon */
+.spinner{
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-left: -50px; /* half width of the spinner gif */
+  margin-top: -50px; /* half height of the spinner gif */
+  text-align:center;
+  z-index:1234;
+  overflow: auto;
+  width: 50; /* width of the spinner gif */
+  height: 52px; /*hight of the spinner gif +2px to fix IE8 issue */
+}
+.spinner img{
+
+}
+
+/* Error Message */
+#error p{
+  display: none;
+  background-color: #ff0000;
+}
+
+/* Location Information */
+#info{
+  display: none;
+  background-color: #DCF7F7;
+}
+
+/* Footer */
+footer{
+  background: #FFFFFF;
+  width: 100%;
+  overflow: hidden;
+  height: auto;
+}
+footer p{
+  color: black;
+  font-size: 10px;
+}
+section{
+  float: left;
+  margin-top: 0.5%;
+  margin-left: 1%;
+  margin-bottom: 0.2%;
+  opacity: 0.5;
+}
 
 /* Site Wrapper - Everything that isn't navigation */
 .site-wrap {
   /* Critical position and size styles */
   height: 100%;
   width: 100%;
-  /*background-color: white; /* Needs a background or else the nav will show through */
-  position: absolute;
   top: 0;
-  bottom: 100%;
+  bottom: 0;
+  right: 0;
   left: 0;
-  z-index: 1;
-  overflow: scroll;
 
   /* non-critical apperance styles */
-  padding: 4em;
+  padding-top: 2em;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-bottom: 0;
   background-image: linear-gradient(135deg, rgb(254,255,255) 0%,rgb(229,255,255) 35%,rgb(203,255,255) 75%, rgb(178,255,255) 100%);
-  background-size: 500%;
 }
-/* Body Format */
-body {
-    /* Without this, the body has excess horizontal scroll when the menu is open */
-  overflow-x: hidden;
-}
+
 /* Micro reset */
-*,*:before,*:after{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;margin:0;padding:0;}
-html, body { height: 100%; width: 100%; font-family: Helvetica, Arial, sans-serif; }
+*:before,*:after{
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+html, body{
+  height: 100%;
+  width: 100%;
+}
 
 /* Media Queries */
 @media only screen and (max-width: 1245px){
@@ -495,23 +551,5 @@ html, body { height: 100%; width: 100%; font-family: Helvetica, Arial, sans-seri
     text-align: center;
     letter-spacing: 1px;
     padding: 10px;
-  }
-
-  /* Loading Icon */
-  .spinner{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    margin-left: -50px; /* half width of the spinner gif */
-    margin-top: -50px; /* half height of the spinner gif */
-    text-align:center;
-    z-index:1234;
-    overflow: auto;
-    width: 50; /* width of the spinner gif */
-    height: 52px; /*hight of the spinner gif +2px to fix IE8 issue */
-  }
-
-  #error p{
-    background-color: #ff0000;
   }
 }

@@ -2,6 +2,7 @@
 
 <html lang="en">
 <head>
+  <!-- Meta -->
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <!-- Mobile ViewPort -->
@@ -13,59 +14,85 @@
   <!-- Favicon -->
   <link rel="shortcut icon" href="{{ url_for('static', filename='icon.png') }}">
   <!-- Style Sheet -->
-  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/style.css') }}">
+  <link rel= "stylesheet" type= "text/css" href= "main.css">
 </head>
 
 <body>
+  <!-- Header -->
   <header id="shadow">
+    <!-- Logo -->
     <img src="{{ url_for('static',filename='GetThereSafeLogo.png') }}"/>
     <!-- <h1>-Don’t accidentally buy drugs on the way home.-</h1> -->
+    <!-- Slogan -->
     <h1>Don't get frightened on the way home.</h1>
   </header>
 
+<!-- Add background and containment-->
     <div class="site-wrap">
 
       <div>
-        <div class="divmap" id="text-wrap">
+        <!-- Beginning of box. -->
+        <div id="text-wrap" class="divtext" >
           <h2>Find the route with the most lighting at night!</h2>
           <p>
             Please type in your location and your desired destination.<br> <br>
           </p>
+          <!-- Form -->
           <form>
             <input class="textbox" type="text" id="starting_point" placeholder="Start - 172 wilson st victoria"> <br> <br>
             <input class="textbox" type="text" id="ending_point" placeholder="Destination - 1180 Fort st victoria"> <br> <br>
             <!-- TODO: Clear text field -->
           </form>
-          <p style="margin:5px;">Click on the map to show location</p>
-          <p id="mapLoc" style="font-weight: bold;"></p>
-          <button class="button" id="bttn" style="cursor: pointer;">Search</button>
-          <div id="spinner" class="spinner" style="display:none;">
+          <!-- Text to inform users. -->
+          <p class="instruction">Click on the map to show location.</p>
+          <!-- IDK - Ask -->
+          <p id="mapLoc" class="mapLoc"></p>
+          <!-- Button for Searching. -->
+          <button id="bttn" class="button">Search</button>
+          <!-- Spinner Display for loading. -->
+          <div id="spinner" class="spinner">
+            <!-- Gif for the spinner. -->
             <img id="img-spinner" src="{{ url_for('static',filename='spinner.gif') }}" alt="Loading"/>
           </div>
-          <div id="error" style="display:none;">
-              <p>Could not load route</p>
+          <!-- Error Message -->
+          <div id="error">
+              <p>Sorry, could not load route, <br>
+                because it isn't in the database or within the location restriction. <br>
+                Please try again.</p>
           </div>
-          <div id="info" style="display:none;background-color: #DCF7F7;">
+          <!-- Information on Location -->
+          <div id="info">
+            <!-- Information Text -->
               <p id="info-text"></p>
           </div>
         </div>
       </div>
 
-      <div class="divmap"id="map">
+      <!-- Google Map -->
+      <div id="map">
       </div>
 
-      <!-- <div class="bottom"> -->
-      <!--  <p>Contains information licensed under the Open Government Licence – City of Victoria.</p> -->
-      <!-- </div> -->
+  </div>
 
-    </div>
+  <!-- Footer -->
+  <footer>
+    <section>
+      <p>Contains information licensed under the Open Government Licence – City of Victoria.</p>
+    </section>
+  </footer>
 
+  <!-- Copyright - Dominique, Christophe, AJ 2016. -->
+
+
+<!-- Scripts -->
+    <!-- Jquery Script -->
     <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <!-- Google Map Script -->
     <script src="https://maps.googleapis.com/maps/api/js?libraries=geometry"></script>
-    <script type=text/javascript src="{{
-    url_for('static', filename='js/scripts.js') }}"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
-    async defer></script>
+    <!-- Link to scripts.js -->
+    <script type=text/javascript src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    <!-- Google Map -->
+    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
 
-</body>
+  </body>
 </html>
