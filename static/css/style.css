@@ -127,7 +127,7 @@ header span{
   margin-top: 10%;
   margin-bottom: 10%;
 }
-.button #bttn{
+.button:hover{
   cursor: pointer;
 }
 /* Loading Icon */
