@@ -1,38 +1,41 @@
 <!doctype html>
 
 <html lang="en">
-<head>
-  <!-- Meta -->
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <!-- Mobile ViewPort -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Fonts -->
-  <link href='https://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
-  <!-- Title -->
-  <title>Get There Safe</title>
-  <!-- Favicon -->
-  <link rel="shortcut icon" href="{{ url_for('static', filename='GetThereSafeFavicon.png') }}">
-  <!-- Style Sheet -->
-  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/style.css') }}">
-</head>
+  <head>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Mobile ViewPort -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
+    <!-- Title -->
+    <title>Get There Safe</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/icon.png') }}">
+    <!-- Style Sheet -->
+    <link rel="stylesheet" type= "text/css" href="{{ url_for('static',filename='css/style.css') }}">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{url_for('static', filname='css/bootsrap.css') }}">
+  </head>
 
-<body>
-  <!-- Header -->
-  <header id="shadow">
-    <!-- Logo -->
-    <img src="{{ url_for('static',filename='GetThereSafeLogo.png') }}"/>
-    <!-- <h1>-Don’t accidentally buy drugs on the way home.-</h1> -->
-    <!-- Slogan -->
-    <h1>Don't get frightened on the way home.</h1>
-  </header>
+  <body>
 
-<!-- Add background and containment-->
+    <!-- Header -->
+    <header id="shadow">
+      <!-- Logo -->
+      <img src="{{ url_for('static',filename='images/GetThereSafeLogo.png') }}"/>
+      <!-- <h1>-Don’t accidentally buy drugs on the way home.-</h1> -->
+      <!-- Slogan -->
+      <h1>Don't get frightened on the way home.</h1>
+    </header>
+
+    <!-- Adds background and containment -->
     <div class="site-wrap">
 
-      <div>
+      <div class="row">
         <!-- Beginning of box. -->
-        <div id="text-wrap" class="divtext" >
+        <div id="text-wrap" class="divtext col-md-3 col-xs-12">
           <h2>Find the route with the most lighting at night!</h2>
           <p>
             Please type in your location and your desired destination.<br> <br>
@@ -52,49 +55,51 @@
           <!-- Spinner Display for loading. -->
           <div id="spinner" class="spinner">
             <!-- Gif for the spinner. -->
-            <img id="img-spinner" src="{{ url_for('static',filename='spinner.gif') }}" alt="Loading"/>
+            <img id="img-spinner" src="{{ url_for('static',filename='images/spinner.gif') }}" alt="Loading"/>
           </div>
           <!-- Error Message -->
           <div id="error">
-              <p>Sorry, could not load route, <br>
-                because it isn't in the database or within the location restriction. <br>
-                Please try again.</p>
-          </div>
-          <!-- Information on Location -->
-          <div id="info">
-            <!-- Information Text -->
+            <p>Sorry, could not load route, <br>
+              because it isn't in the database or within the location restriction. <br>
+              Please try again.</p>
+            </div>
+            <!-- Information on Location -->
+            <div id="info">
+              <!-- Information Text -->
               <p id="info-text"></p>
+            </div>
           </div>
         </div>
+
+        <!-- Google Map -->
+        <div class="row">
+          <div id="map" class="col-md-8 col-md-offset-1 col-xs-12">
+          </div>
+        </div>
+
       </div>
 
+      <!-- Footer -->
+      <footer>
+        <section>
+          <p>Contains information licensed under the Open Government Licence – City of Victoria.</p>
+        </section>
+      </footer>
+
+      <!-- Copyright - Dominique, Christophe, AJ 2016. -->
+
+
+      <!-- Scripts -->
+      <!-- Jquery Script -->
+      <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+      <!-- Google Map Script -->
+      <script src="https://maps.googleapis.com/maps/api/js?libraries=geometry"></script>
+      <!-- Link to scripts.js -->
+      <script type=text/javascript src="{{ url_for('static', filename='js/scripts.js') }}"></script>
       <!-- Google Map -->
-      <div id="map">
-      </div>
-
-  </div>
-
-  <!-- Footer -->
-  <footer>
-    <section>
-      <p>Contains information licensed under the Open Government Licence – City of Victoria.</p>
-    </section>
-  </footer>
-
-  <!-- Copyright - Dominique, Christophe, AJ 2016. -->
-
-
-<!-- Scripts -->
-    <!-- Jquery Script -->
-    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
-    <!-- Google Map Script -->
-    <script src="https://maps.googleapis.com/maps/api/js?libraries=geometry"></script>
-    <!-- Link to scripts.js -->
-    <script type=text/javascript src="{{ url_for('static', filename='js/scripts.js') }}"></script>
-    <!-- Google Map -->
-    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
-    <!-- Google Analytics -->
-    <script>
+      <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
+      <!-- Google Analytics -->
+      <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -103,7 +108,7 @@
       ga('create', 'UA-74387078-2', 'auto');
       ga('send', 'pageview');
 
-    </script>
+      </script>
 
-  </body>
+    </body>
 </html>
