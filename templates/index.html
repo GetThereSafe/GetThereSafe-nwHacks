@@ -12,7 +12,7 @@
     <!-- Title -->
     <title>Get There Safe</title>
     <!-- Favicon -->
-    <link rel="shortcut icon" href="{{ url_for('static', filename='images/icon.png') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/GetThereSafeFavicon.png') }}">
     <!-- Style Sheet -->
     <link rel="stylesheet" type= "text/css" href="{{ url_for('static',filename='css/style.css') }}">
     <!-- Bootstrap CSS -->
@@ -34,49 +34,52 @@
     <div class="site-wrap">
 
       <div class="row">
-        <!-- Beginning of box. -->
-        <div id="text-wrap" class="divtext col-md-3 col-xs-12">
-          <h2>Find the route with the most lighting at night!</h2>
-          <p>
-            Please type in your location and your desired destination.<br> <br>
-          </p>
-          <!-- Form -->
-          <form>
-            <input class="textbox" type="text" id="starting_point" placeholder="Start - 172 wilson st victoria"> <br> <br>
-            <input class="textbox" type="text" id="ending_point" placeholder="Destination - 1180 Fort st victoria"> <br> <br>
-            <!-- TODO: Clear text field -->
-          </form>
-          <!-- Text to inform users. -->
-          <p class="instruction">Click on the map to show location.</p>
-          <!-- IDK - Ask -->
-          <p id="mapLoc" class="mapLoc"></p>
-          <!-- Button for Searching. -->
-          <button id="bttn" class="button">Search</button>
-          <!-- Spinner Display for loading. -->
-          <div id="spinner" class="spinner">
-            <!-- Gif for the spinner. -->
-            <img id="img-spinner" src="{{ url_for('static',filename='images/spinner.gif') }}" alt="Loading"/>
-          </div>
-          <!-- Error Message -->
-          <div id="error">
-            <p>Sorry, could not load route, <br>
-              because it isn't in the database or within the location restriction. <br>
-              Please try again.</p>
-            </div>
-            <!-- Information on Location -->
-            <div id="info">
-              <!-- Information Text -->
-              <p id="info-text"></p>
-            </div>
-          </div>
-        </div>
 
-        <!-- Google Map -->
-        <div class="row">
-          <div id="map" class="col-md-8 col-md-offset-1 col-xs-12">
+        <div>
+          <!-- Beginning of box. -->
+          <div id="text-wrap" class="divtext col-md-3 col-xs-12">
+            <h2>Find the route with the most lighting at night!</h2>
+            <p>
+              Please type in your location and your desired destination.<br> <br>
+            </p>
+            <!-- Form -->
+            <form>
+              <input class="textbox" type="text" id="starting_point" placeholder="Start - 172 wilson st victoria"> <br> <br>
+              <input class="textbox" type="text" id="ending_point" placeholder="Destination - 1180 Fort st victoria"> <br> <br>
+              <!-- TODO: Clear text field -->
+            </form>
+            <!-- Text to inform users. -->
+            <p class="instruction">Click on the map to show location.</p>
+            <!-- IDK - Ask -->
+            <p id="mapLoc" class="mapLoc"></p>
+            <!-- Button for Searching. -->
+            <button id="bttn" class="button">Search</button>
+            <!-- Spinner Display for loading. -->
+            <div id="spinner" class="spinner">
+              <!-- Gif for the spinner. -->
+              <img id="img-spinner" src="{{ url_for('static',filename='images/spinner.gif') }}" alt="Loading"/>
+            </div>
+            <!-- Error Message -->
+            <div id="error">
+              <p>Sorry, could not load route, <br>
+                because it isn't in the database or within the location restriction. <br>
+                Please try again.</p>
+              </div>
+              <!-- Information on Location -->
+              <div id="info">
+                <!-- Information Text -->
+                <p id="info-text"></p>
+              </div>
+            </div>
           </div>
-        </div>
 
+          <!-- Google Map -->
+          <div>
+            <div id="map" class="col-md-8 col-md-offset-1 col-xs-12">
+            </div>
+          </div>
+
+        </div>
       </div>
 
       <!-- Footer -->
