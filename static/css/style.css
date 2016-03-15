@@ -165,7 +165,8 @@ footer{
   background: #FFFFFF;
   width: 100%;
   overflow: hidden;
-  height: auto;
+  height: 15px;
+  margin-top: 3px;
 }
 footer p{
   color: black;
@@ -212,7 +213,7 @@ html, body{
 
 /* Spacing between header and body */
 .space{
-  padding-top: 10px;
+  padding-top: 20px;
 }
 
 
