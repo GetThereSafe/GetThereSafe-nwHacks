@@ -212,7 +212,7 @@ html, body{
 
 /* Spacing between header and body */
 .space{
-  margin-top: 10px;
+  padding-top: 10px;
 }
 
 
