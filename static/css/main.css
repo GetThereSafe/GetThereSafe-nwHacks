@@ -1,0 +1,143 @@
+/* Global */
+*{
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body{
+  font-family: 'Questrial', sans-serif;
+  width: 100%;
+  height: 100%;
+}
+.body{
+  padding-top: 9em;
+}
+/* Header */
+header{
+  position: fixed;
+  overflow: hidden;
+  background-color: #FFFFFF;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+/* Shadow */
+#shadow{
+  -moz-box-shadow: 0px 0px 11px rgba(0,0,0,1);
+  -webkit-box-shadow: 0px 0px 11px rgba(0,0,0,1);
+  box-shadow: 0px 0px 11px rgba(0,0,0,1);
+  position: fixed;
+}
+#shadow h1{
+  font-size: 2em;
+  text-align: center;
+  letter-spacing: 1px;
+  padding-top: 2%;
+}
+#shadow img{
+  float: left;
+  width: 10em;
+  height: 5em;
+}
+/* Goolgle Maps */
+#map{
+  float: right;
+  background-color: #CCC;
+  border: 4px solid #DDD;
+  box-shadow: 0 0 5px #333;
+  margin: 10px;
+}
+/* Text Section */
+#text-wrap{
+  float: left;
+  text-align: center;
+  background-color: white;
+  border: 1px double #DDD;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #666;
+  margin: 10px;
+}
+#text-wrap h2{
+  font-weight: 900;
+  font-size: 1.5em;
+  padding: 0.3em;
+}
+#text-wrap p{
+  font-size: 0.8em;
+  padding: 0.3em;
+}
+#text-wrap p .mapLoc{
+  font-weight: bold;
+  padding: 0.3em;
+}
+/* Search Text Box */
+.textbox{
+  font-size: 0.5em;
+  padding: 5px;
+  border: 1px double #DDD;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #333;
+  height: 4em;
+  width: 45em;
+}
+.button{
+  text-align: center;
+  align-items: center;
+  padding: 5px;
+  background-color: #BCC6CC;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #333;
+  height: 3em;
+  width: 8em;
+  margin: 1em;
+}
+.button:hover{
+  cursor: pointer;
+  cursor: hand;
+}
+/* Loading Icon */
+#img-spinner,
+#img-spinner img{
+  display: none;
+  position: fixed;
+  z-index: 1234;
+  overflow: auto;
+  margin-left: -50px; /* half width of the spinner gif */
+  margin-top: -50px; /* half height of the spinner gif */
+  width: 50; /* width of the spinner gif */
+  height: 52px; /*hight of the spinner gif +2px to fix IE8 issue */
+}
+/* Error Message */
+#error p{
+  display: none;
+  background-color: #FF0000;
+}
+/* Location Info */
+#info{
+  display: none;
+  background-color: #DCF7F7;
+}
+/* Footer */
+footer{
+  background-color: #FFFFFF;
+  width: auto;
+  overflow: hidden;
+  height: auto;
+}
+footer p{
+  color: black;
+  font-size: 1em;
+  float: left;
+  margin-top: 0.5%auto;
+  margin-left: 1%;
+  margin-bottom: 0.2%;
+  opacity: 0.5;
+}
+/* Site Wrapper - Everything that isn't navigation */
+.site-wrap{
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(135deg, rgb(254,255,255) 0%,rgb(229,255,255) 35%,rgb(203,255,255) 75%, rgb(178,255,255) 100%);
+}
