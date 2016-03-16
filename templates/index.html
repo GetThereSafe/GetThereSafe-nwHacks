@@ -1,121 +1,103 @@
-<!doctype html>
-
+<!doctype html-->
 <html lang="en">
+  <!-- Head -->
   <head>
     <!-- Meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Mobile ViewPort -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Fonts -->
-    <link href='https://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Questrial" type="text/css">
     <!-- Title -->
     <title>Get There Safe</title>
     <!-- Favicon -->
-    <link rel="shortcut icon" href="{{ url_for('static', filename='images/GetThereSafeFavicon.png') }}">
-    <!-- Style Sheet -->
-    <link rel="stylesheet" type= "text/css" href="{{ url_for('static',filename='css/style.css') }}">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{{url_for('static', filename='css/bootsrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='images/GetThereSafeFavicon.png') }}">
+    <!-- StyleSheet -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/main.css') }}" type="text/css">
+    <!-- BootStrap -->
+    <link rel="stylesheet" href="{{url_for('static', filename='css/bootsrap.css') }}" type="text/css">
   </head>
 
+  <!-- Body -->
   <body>
-
     <!-- Header -->
     <header id="shadow">
       <!-- Logo -->
-      <img src="{{ url_for('static',filename='images/GetThereSafeLogo.png') }}"/>
-      <!-- <h1>-Don’t accidentally buy drugs on the way home.-</h1> -->
+      <img src="{{ url_for('static',filename='images/GetThereSafeLogo.png') }}" alt="Get There Safe App Logo">
       <!-- Slogan -->
       <h1>Don't get frightened on the way home.</h1>
     </header>
 
-    <!-- Adds background and containment -->
-    <div class="site-wrap space">
-
-      <div class="row">
-
+    <!-- Background and Container -->
+    <div class="site-wrap body row">
+      <!-- Beginning of box -->
+      <div id="text-wrap" class="col-md-3 col-xs-12">
+        <h2>Find the route with the most lighting at night!</h2>
+        <p>Please type in your location and your desired destination. <br><br> </p>
+        <!-- Form -->
+        <form action="">
+          <input id="starting_point" type="text" class="textbox" placeholder="Start - 172 Wilson St Victoria"> <br><br>
+          <input id="ending_point" type="text" class="textbox" placeholder="Destination - 1180 Fort St Victoria"> <br><br>
+          <!-- TODO: Clear text field -->
+        </form>
+        <!-- Text for users -->
+        <p class="instruction">Click on the map to show location.</p>
+        <!-- -->
+        <p id="mapLoc" class="mapLoc"></p>
+        <!-- Search Button -->
+        <button id="bttn" class="button">Search</button>
+        <!-- Loading Spinner -->
         <div>
-          <!-- Beginning of box. -->
-          <div id="text-wrap" class="divtext col-md-3 col-xs-12">
-            <h2>Find the route with the most lighting at night!</h2>
-            <p>
-              Please type in your location and your desired destination.<br> <br>
-            </p>
-            <!-- Form -->
-            <form>
-              <input class="textbox" type="text" id="starting_point" placeholder="Start - 172 wilson st victoria"> <br> <br>
-              <input class="textbox" type="text" id="ending_point" placeholder="Destination - 1180 Fort st victoria"> <br> <br>
-              <!-- TODO: Clear text field -->
-            </form>
-            <!-- Text to inform users. -->
-            <p class="instruction">Click on the map to show location.</p>
-            <!-- IDK - Ask -->
-            <p id="mapLoc" class="mapLoc"></p>
-            <!-- Button for Searching. -->
-            <button id="bttn" class="button">Search</button>
-            <!-- Spinner Display for loading. -->
-            <div id="spinner" class="spinner">
-              <!-- Gif for the spinner. -->
-              <img id="img-spinner" src="{{ url_for('static',filename='images/spinner.gif') }}" alt="Loading"/>
-            </div>
-            <!-- Error Message -->
-            <div id="error">
-              <p>Sorry, could not load route, <br>
-                because it isn't in the database or within the location restriction. <br>
-                Please try again.</p>
-              </div>
-              <!-- Information on Location -->
-              <div id="info">
-                <!-- Information Text -->
-                <p id="info-text"></p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Google Map -->
-          <div class="col-md-9 col-xs-12">
-            <div>
-              <div id="map">
-              </div>
-            </div>
-          </div>
-
+        <!--  <img id="img-spinner" src="{{ url_for('static',filename='images/spinner.gif') }" alt="Loading Spinner"></img> -->
+        <img id="img-spinner" src="images/spinner.gif" alt="Loading">
+        </div>
+        <!-- Error Message -->
+        <div id="error">
+          <p>Could Not Load, Please Try Again.</p>
+        </div>
+        <!-- Information on Location -->
+        <div id="info">
+          <!-- Information Text -->
+          <p id="info-text"></p>
         </div>
       </div>
 
-      <!-- Footer -->
-      <div class="col-xs-12">
-        <footer>
-          <section>
-            <p>Contains information licensed under the Open Government Licence – City of Victoria.</p>
-          </section>
-        </footer>
+      <!-- Google Maps -->
+      <div class="col-md-9 col-xs-12">
+        <div id="map"></div>
       </div>
 
-      <!-- Copyright - Dominique, Christophe, AJ 2016. -->
+    </div>
 
+    <!-- Footer -->
+    <div class="row">
+      <footer class="col-xs-12">
+        <p>Contains information licensed under the Open Government Licence – City of Victoria.</p>
+      </footer>
+    </div>
+    <!-- Copyright - Dominique, Christophe, AJ 2016. -->
 
-      <!-- Scripts -->
-      <!-- Jquery Script -->
-      <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
-      <!-- Google Map Script -->
-      <script src="https://maps.googleapis.com/maps/api/js?libraries=geometry"></script>
-      <!-- Link to scripts.js -->
-      <script type=text/javascript src="{{ url_for('static', filename='js/scripts.js') }}"></script>
-      <!-- Google Map -->
-      <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
-      <!-- Google Analytics -->
-      <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    <!-- Scripts -->
+    <!-- Jquery Script -->
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <!-- Google Map Script -->
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=geometry"></script>
+    <!-- Link to scripts.js -->
+    <script type=text/javascript src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    <!-- Google Map -->
+    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
+    <!-- Google Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-      ga('create', 'UA-74387078-2', 'auto');
-      ga('send', 'pageview');
+    ga('create', 'UA-74387078-2', 'auto');
+    ga('send', 'pageview');
 
-      </script>
+    </script>
 
-    </body>
+  </body>
 </html>
