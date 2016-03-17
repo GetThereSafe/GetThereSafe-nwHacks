@@ -2,8 +2,8 @@ var map;
 var polylines = [];
 
 function initMap() {
-    var mapDiv = document.getElementById('map');
-    map = new google.maps.Map(mapDiv, {
+    var $mapDiv = $('#map');
+    map = new google.maps.Map($mapDiv, {
       center: {lat: 48.428611, lng: -123.365556},
       zoom: 14
     });
