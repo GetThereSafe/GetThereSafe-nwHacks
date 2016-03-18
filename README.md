@@ -15,6 +15,6 @@
 "Great :D I love Lamps."
 > Christophe
 
-"You are a fruit, perhaps a pomegranet!"
+"You are a fruit, perhaps a pomegranate!"
 > Sarah
 
