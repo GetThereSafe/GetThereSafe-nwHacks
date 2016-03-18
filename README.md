@@ -4,7 +4,7 @@
 
 --------
 
-[Website](http://gettheresafe.herokuapp.com/)
+[Website](http://www.gettheresafe.net/)
 
 "This is amazing.... I got home semi-safe."
 > Dominique
@@ -14,4 +14,7 @@
 
 "Great :D I love Lamps."
 > Christophe
+
+"You are a fruit, perhaps a pomegranet!"
+> Sarah
 
