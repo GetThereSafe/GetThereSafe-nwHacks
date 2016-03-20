@@ -2,10 +2,12 @@ var map;
 var polylines = [];
 
 function initMap() {
-    var $mapDiv = $('#map');
-    map = new google.maps.Map($mapDiv[0], {
+    // Get map div element
+    var mapDiv = $('#map')[0];
+    map = new google.maps.Map(mapDiv, {
       center: {lat: 48.428611, lng: -123.365556},
-      zoom: 14
+      zoom: 14,
+      mapTypeId: google.maps.MapTypeId.TERRAIN
     });
 
     google.maps.event.addListener(map, 'click', function(event) {
