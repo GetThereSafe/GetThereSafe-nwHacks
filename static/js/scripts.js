@@ -29,7 +29,7 @@ function mapRoute(routes) {
             latlngPoints.push({lat: routes[j][2][i][0], lng: routes[j][2][i][1]});
         }
         var strokeColor = '#00FF00';
-        var strokeWeight = 3;
+        var strokeWeight = 3.5;
         if(j >= 1){
             strokeColor = '#0000FF';
             strokeWeight = 1.5;
