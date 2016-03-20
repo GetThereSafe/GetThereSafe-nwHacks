@@ -60,7 +60,7 @@ function getRoutes(starting_point, ending_point) {
     // Hide errors and show loading spinner
     $("#error").hide();
     $("#info").hide();
-    $("#spinner").show();
+    $("#img-spinner").show();
     // Ajax request to server to get best routes
     $.ajax({
       url: '/route',
@@ -73,7 +73,7 @@ function getRoutes(starting_point, ending_point) {
       $("#error").show();
     }).always(function() {
         $("#mapLoc").text("");
-        $("#spinner").hide();
+        $("#img-spinner").hide();
     });
 }
 
