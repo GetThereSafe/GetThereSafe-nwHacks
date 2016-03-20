@@ -59,14 +59,12 @@ function getRoutes(starting_point, ending_point) {
       url: '/route',
       type: 'POST',
       data: { start: starting_point, end: ending_point},
-      success: function(data) {
-          routes = JSON.parse(data);
-          mapRoute(routes);
-      },
-      error: function() {
-          $("#error").show();
-      }
-  }).always(function() {
+    }).done(function(data) {
+      routes = JSON.parse(data);
+      mapRoute(routes);
+    }).fail(function() {
+      $("#error").show();
+    }).always(function() {
         $("#mapLoc").text("");
         $("#spinner").hide();
     });
