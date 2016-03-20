@@ -1,6 +1,7 @@
 var map;
 var polylines = [];
 
+// This is called as a callback after the google API is loaded properly into the page
 function initMap() {
     // Get map div element
     var mapDiv = $('#map')[0];
@@ -10,7 +11,7 @@ function initMap() {
       zoom: 14,
       mapTypeId: google.maps.MapTypeId.TERRAIN
     });
-    // Add a listener for whe nyou click on the map -> Show address in the info box
+    // Add a listener for when you click on the map -> Show address in the info box
     google.maps.event.addListener(map, 'click', function(event) {
         var geocoder = new google.maps.Geocoder();
         latlngobj = event.latLng;
@@ -51,7 +52,8 @@ function mapRoute(routes) {
         polyline.setMap(map);
         polylines.push(polyline);
     }
-    // Let user know best path - Always returned as first route in the list of routes
+    // Let user know best path - Always returned as first route in the list of routes. First element
+    // of the route is the number of street lights
     $("#info-text").text("Best route found with " + routes[0][0] + " street lights");
     $("#info").show();
 }
