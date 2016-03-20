@@ -55,8 +55,13 @@ def _get_best_route(routes):
         # Calculate number of lightsources on the route
         light_sources = 0
         for coord in decoded_route_coords:
-            if _has_nearby_lightsource(coord, light_source_coords):
+            last_light_coord = None
+            # Get close lightsource or return None
+            nearby_light_source = _get_nearby_lightsource(coord, light_source_coords)
+            # Make sure the lightsource we found hasn't already been used
+            if nearby_light_source and nearby_light_source != last_light_coord:
                 light_sources += 1
+                last_light_coord = nearby_light_source
 
         route_rank.append([light_sources, route, decoded_route_coords])
 
@@ -70,12 +75,12 @@ def _get_coords_from_polyline(polyline):
     return PolylineCodec().decode(polyline)
 
 
-def _has_nearby_lightsource(coord, light_source_coords):
+def _get_nearby_lightsource(coord, light_source_coords):
     # Check if any lightsource in the light_source_coords is within eight meters of the route coordinate
     for light_coord in light_source_coords:
         if _get_distance_between_points(coord, light_coord) <= 8:
-            return True
-    return False
+            return light_coord
+    return None
 
 
 def _get_distance_between_points(coord_tuple_a, coord_tuple_b):
