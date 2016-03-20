@@ -54,8 +54,8 @@ def _get_best_route(routes):
 
         # Calculate number of lightsources on the route
         light_sources = 0
+        last_light_coord = None
         for coord in decoded_route_coords:
-            last_light_coord = None
             # Get close lightsource or return None
             nearby_light_source = _get_nearby_lightsource(coord, light_source_coords)
             # Make sure the lightsource we found hasn't already been used
