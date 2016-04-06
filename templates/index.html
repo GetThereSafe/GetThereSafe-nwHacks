@@ -1,96 +1,268 @@
-<!doctype html-->
+<!DOCTYPE html>
 <html lang="en">
-  <!-- Head -->
-  <head>
-    <!-- Meta -->
+<!-- Head -->
+<head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- Mobile ViewPort -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Google Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Questrial" type="text/css">
-    <!-- Title -->
-    <title>Get There Safe</title>
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="{{ url_for('static', filename='images/GetThereSafeFavicon.png') }}" type="image/png">
-    <!-- StyleSheet -->
-    <link rel="stylesheet" href="{{ url_for('static',filename='css/main.css') }}" type="text/css">
-    <!-- BootStrap -->
-    <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.css') }}" type="text/css">
-  </head>
+    <meta name="description" content="Get There Safe is a web app that helps you get to your destination 'safely'.">
+    <meta name="author" content="AJ, Christophe, and Dominique">
 
-  <!-- Body -->
-  <body>
-    <!-- Header -->
-    <nav class="navbar navbar-fixed-top">
-      <div id="shadow" class="container">
-        <!-- Logo -->
-        <img src="{{ url_for('static',filename='images/GetThereSafeLogo.png') }}" alt="Get There Safe App Logo">
-        <!-- Slogan -->
-        <h1>Don't get frightened on the way home.</h1>
-      </div>
+    <title>Get There Safe</title>
+
+    <!-- Favicon -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='images/GetThereSafeFavicon.png') }}">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.css') }}" type="text/css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{url_for('static', filename='css/grayscale.css') }}" type="text/css">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">
+                    <i class="fa fa-play-circle"></i>  <span class="light">Get Started</span> Victoria
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#download">Main</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about">About</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#testimonials">Testimonials</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
     </nav>
 
-    <div class="">
-      <!-- Background and Container -->
-      <div class="site-wrap body">
-        <!-- Row Class for Bootstrap -->
-        <div class="row>"
-          <!-- Beginning of box -->
-          <div id="text-wrap" class="col-xs-10 col-xs-push-1">
-            <h2>Find the route with the most lighting at night!</h2>
-            <p>Please type in your location and your desired destination. <br><br> </p>
-            <!-- Form -->
-            <form action="">
-              <input id="starting_point" type="text" class="textbox" placeholder="Start - 172 Wilson St Victoria"> <br><br>
-              <input id="ending_point" type="text" class="textbox" placeholder="Destination - 1180 Fort St Victoria"> <br><br>
-              <!-- TODO: Clear text field -->
-            </form>
-            <!-- Text for users -->
-            <p class="instruction">Click on the map to show location.</p>
-            <!-- -->
-            <p id="mapLoc" class="mapLoc"></p>
-            <!-- Search Button -->
-            <button id="bttn" class="button">Search</button>
-            <!-- Loading Spinner -->
-            <div>
-              <img id="img-spinner" src="{{ url_for('static',filename='images/spinner.gif') }}" alt="Loading Spinner"></img>
+    <!-- Intro Header -->
+    <header class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h1 class="brand-heading">Get There Safe</h1>
+                        <p class="intro-text">A free, helpful, service to map out the 'safest' route home.<br>Created by AJ, Christophe and Dominique.</p>
+                        <a href="#about" class="btn btn-circle page-scroll">
+                            <i class="fa fa-angle-double-down animated"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
-            <!-- Error Message -->
-            <div id="error">
-              <p>Could Not Load, Please Try Again.</p>
-            </div>
-            <!-- Information on Location -->
-            <div id="info">
-              <!-- Information Text -->
-              <p id="info-text"></p>
-            </div>
-            <!-- Disclaimer -->
-            <p>Contains information licensed under the Open Government Licence – City of Victoria.</p>
-          </div>
         </div>
+    </header>
 
-        <div class="clearfix visible-xs-block visible-sm-block"></div>
 
-        <!-- Google Maps -->
-        <div class="">
-          <div id="map" class="col-xs-10 col-xs-pull-1">
-          </div>
+    <!-- Download Section -->
+    <section id="download" class="content-section text-center">
+        <div class="download-section">
+            <div class="container">
+                <div class="col-lg-8 col-lg-offset-2">
+                  <h2>Don't get frightened on the way home.</H2>
+                </div>
+            </div>
         </div>
+    </section>
 
+    <!-- Main Section -->
+    <section>
+      <div class="row">
+      <!-- Beginning -->
+      <div id="text-wrap" class="col-xs-10 col-xs-push-1">
+        <h2>Find the route with the most lighting at night!</h2>
+        <p>Please type in your location and your desired destination. <br><br> </p>
+        <!-- Form -->
+        <form action="">
+          <input id="starting_point" type="text" class="textbox" placeholder="Start - 172 Wilson St Victoria"> <br><br>
+          <input id="ending_point" type="text" class="textbox" placeholder="Destination - 1180 Fort St Victoria"> <br><br>
+          <!-- TODO: Clear text field -->
+        </form>
+        <!-- Text for users -->
+        <p class="instruction">Click on the map to show location.</p>
+        <!-- -->
+        <p id="mapLoc" class="mapLoc"></p>
+        <!-- Search Button -->
+        <button id="bttn" class="button">Search</button>
+        <!-- Loading Spinner -->
+        <div>
+          <!--  <img id="img-spinner" src="{{ url_for('static',filename='images/spinner.gif') }}" alt="Loading Spinner"></img> -->
+          <img id="img-spinner" src="images/spinner.gif" alt="Loading">
+        </div>
+        <!-- Error Message -->
+        <div id="error">
+          <p>Could Not Load, Please Try Again.</p>
+        </div>
+        <!-- Information on Location -->
+        <div id="info">
+          <!-- Information Text -->
+          <p id="info-text"></p>
+        </div>
+        <!-- Disclaimer -->
+        <p>Contains information licensed under the Open Government Licence – City of Victoria.</p>
       </div>
-    </div>
-    <!-- Copyright - Dominique, Christophe, AJ 2016. -->
+      </div>
 
-    <!-- Scripts -->
-    <!-- Jquery Script -->
-    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    </section>
+
+    <!-- Map Section -->
+    <div id="map"></div>
+
+    <!-- About Section -->
+    <section id="about" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>About Get There Safe</h2>
+                <p>Around the world, cities experience issues that can cause concern for public safety and security. In the past few months, Victoria itself has been burdened with general and sexual assaults, thefts and cyclist accidents. Our team was concerned for travelling even within the typically safe city where we live; a problem no person should ever experience. The question soon became clear to us: regardless of where you live, how can we travel within our own cities safely?</p>
+                <p>Check out the <a href="https://github.com/GetThereSafe/GetThereSafe-nwHacks">project.</a></p>
+              </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Testimonials</h2>
+                <p>"This is amazing.... I got home semi-safe." -Dominique </p>
+                <p>"Yes, finally a web app I sort of need." - AJ </p>
+                <p>"Great :D I love Lamps." - Christophe </p>
+                <p>"You are a fruit, perhaps a pomegranate!" - Sarah</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Contact The Team</h2>
+                <p>Feel free to email us to provide some feedback / suggestions on our website, or to just say hello!</p>
+                <p><a href="mailto:domo.charlebois@gmail.com">domo.charlebois@gmail.com</a>
+                </p>
+                <p>------------------------------------------</p>
+                <!-- AJ -->
+                <h3><br>AJ</h3>
+                <img src="img/AJ_Profile.jpeg" alt="" class="img-rounded center-block">
+                <ul class="list-inline banner-social-buttons">
+                    <li>
+                        <a href="https://github.com/ajdeziel" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                    </li>
+                    <li>
+                        <a href="https://ca.linkedin.com/in/ajdeziel" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">LinkedIn</span></a>
+                    </li>
+                </ul>
+                <!-- Christophe -->
+                <h3><br><br>Christophe</h3>
+                <img src="img/Christophe_Profile.jpeg" alt="" class="img-rounded center-block">
+                <ul class="list-inline banner-social-buttons">
+                    <li>
+                        <a href="https://github.com/moxuz" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                    </li>
+                    <li>
+                        <a href="https://ca.linkedin.com/in/christophepouliot" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">LinkedIn</span></a>
+                    </li>
+                </ul>
+                <!-- Dominique -->
+                <h3><br><br>Dominique</h3>
+                <img src="img/Dominique_Profile.jpeg" alt="" class="img-rounded center-block">
+                <ul class="list-inline banner-social-buttons">
+                    <li>
+                        <a href="https://twitter.com/FlyteWizard" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/FlyteWizard" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                    </li>
+                    <li>
+                        <a href="https://ca.linkedin.com/in/dominiquecharlebois" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">LinkedIn</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Download Section -->
+    <section class="content-section text-center">
+        <div class="ending-section">
+            <div class="container">
+                <div class="col-lg-8 col-lg-offset-2">
+                  <h2></H2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p>Copyright &copy; Get There Safe 2016</p>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script type=text/javascript src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script type=text/javascript src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+
+    <!-- Plugin JavaScript -->
+    <script type=text/javascript src="{{ url_for('static', filename='js/jquery.easing.min.js') }}"></script>
+
+    <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
+    <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script> -->
+
+
     <!-- Google Map Script -->
-    <script src="https://maps.googleapis.com/maps/api/js?libraries=geometry"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=geometry"></script>
+
     <!-- Link to scripts.js -->
     <script type=text/javascript src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+
     <!-- Google Map -->
-    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script type=text/javascript src="{{ url_for('static', filename='js/grayscale.js') }}"></script>
+
     <!-- Google Analytics -->
     <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -103,5 +275,6 @@
 
     </script>
 
-  </body>
+</body>
+
 </html>
