@@ -1,6 +1,7 @@
 # GetThereSafe-nwHacks
 ##A Google Maps API web application to map out the safest route to your destination depending on the time of day - created for nwHacks 2016
 
+Won 1st Prize for Best Use of Open Data during NwHacks 2016
 
 --------
 
