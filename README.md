@@ -1,4 +1,4 @@
-# GetThereSafe-nwHacks
+# Get There Safe
 
 ### About
 
