@@ -1,4 +1,4 @@
-Flask==0.10.1
+Flask==1.0
 Flask-SQLAlchemy==2.1
 googlemaps==2.4.2
 polyline==1.1
